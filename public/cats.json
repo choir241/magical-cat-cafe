@@ -1,0 +1,717 @@
+{
+  "cats": [
+    {
+      "breed": "Maine Coon",
+      "latinName": "Felis catus",
+      "furColors": ["Brown", "Black", "White", "Red", "Cream"],
+      "eyeColors": ["Green", "Gold", "Copper"],
+      "averageWeight": {
+        "male": "6.8 - 11.3 kg",
+        "female": "4.5 - 6.8 kg"
+      },
+      "bodySizeAndShape": "Large, muscular, rectangular body",
+      "furPattern": ["Tabby", "Solid", "Bi-color"],
+      "gallery": "../public/assets/cats/cat1.jpg"
+    },
+    {
+      "breed": "Siamese",
+      "latinName": "Felis catus",
+      "furColors": ["Cream", "Fawn", "Chocolate", "Blue"],
+      "eyeColors": ["Blue"],
+      "averageWeight": {
+        "male": "4.5 - 6.8 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, sleek, elongated",
+      "furPattern": ["Color point"],
+      "gallery": "./assets/cat2.jpg"
+    },
+    {
+      "breed": "Persian",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Blue", "Copper", "Odd-eyed"],
+      "averageWeight": {
+        "male": "3.6 - 6.8 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, cobby body with short legs",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Himalayan"],
+      "gallery": [
+        "https://example.com/persian-1.jpg",
+        "https://example.com/persian-2.jpg"
+      ]
+    },
+    {
+      "breed": "Bengal",
+      "latinName": "Felis catus",
+      "furColors": ["Brown", "Silver", "Snow"],
+      "eyeColors": ["Green", "Gold", "Blue"],
+      "averageWeight": {
+        "male": "4.5 - 6.8 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, muscular, athletic",
+      "furPattern": ["Spotted", "Marbled"],
+      "gallery": [
+        "https://example.com/bengal-1.jpg",
+        "https://example.com/bengal-2.jpg"
+      ]
+    },
+    {
+      "breed": "Sphynx",
+      "latinName": "Felis catus",
+      "furColors": ["Hairless", "Pink", "White", "Black", "Blue"],
+      "eyeColors": ["Blue", "Green", "Gold"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, wrinkled skin",
+      "furPattern": ["Hairless"],
+      "gallery": [
+        "https://example.com/sphynx-1.jpg",
+        "https://example.com/sphynx-2.jpg"
+      ]
+    },
+    {
+      "breed": "Russian Blue",
+      "latinName": "Felis catus",
+      "furColors": ["Blue"],
+      "eyeColors": ["Green"],
+      "averageWeight": {
+        "male": "4.5 - 5.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, slender, elegant",
+      "furPattern": ["Solid"],
+      "gallery": [
+        "https://example.com/russian-blue-1.jpg",
+        "https://example.com/russian-blue-2.jpg"
+      ]
+    },
+    {
+      "breed": "Scottish Fold",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream"],
+      "eyeColors": ["Gold", "Green", "Blue"],
+      "averageWeight": {
+        "male": "4.1 - 5.4 kg",
+        "female": "2.7 - 4.1 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, rounded body, folded ears",
+      "furPattern": ["Solid", "Tabby", "Bi-color"],
+      "gallery": [
+        "https://example.com/scottish-fold-1.jpg",
+        "https://example.com/scottish-fold-2.jpg"
+      ]
+    },
+    {
+      "breed": "Ragdoll",
+      "latinName": "Felis catus",
+      "furColors": ["Seal", "Blue", "Chocolate", "Lilac", "Red", "Cream"],
+      "eyeColors": ["Blue"],
+      "averageWeight": {
+        "male": "5.4 - 9.1 kg",
+        "female": "3.6 - 6.8 kg"
+      },
+      "bodySizeAndShape": "Large, muscular, semi-longhair",
+      "furPattern": ["Color point", "Mitted", "Bi-color"],
+      "gallery": [
+        "https://example.com/ragdoll-1.jpg",
+        "https://example.com/ragdoll-2.jpg"
+      ]
+    },
+    {
+      "breed": "British Shorthair",
+      "latinName": "Felis catus",
+      "furColors": ["Blue", "Black", "White", "Red", "Cream", "Silver"],
+      "eyeColors": ["Copper", "Gold", "Blue"],
+      "averageWeight": {
+        "male": "5.4 - 7.7 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, stocky, round face",
+      "furPattern": ["Solid", "Tabby", "Bi-color"],
+      "gallery": [
+        "https://example.com/british-shorthair-1.jpg",
+        "https://example.com/british-shorthair-2.jpg"
+      ]
+    },
+    {
+      "breed": "Abyssinian",
+      "latinName": "Felis catus",
+      "furColors": ["Ruddy", "Red", "Blue", "Fawn"],
+      "eyeColors": ["Gold", "Green", "Hazel"],
+      "averageWeight": {
+        "male": "3.6 - 4.5 kg",
+        "female": "2.7 - 3.6 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, slender, athletic",
+      "furPattern": ["Ticked"],
+      "gallery": [
+        "https://example.com/abyssinian-1.jpg",
+        "https://example.com/abyssinian-2.jpg"
+      ]
+    },
+    {
+      "breed": "Norwegian Forest Cat",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream", "Silver"],
+      "eyeColors": ["Green", "Gold", "Copper"],
+      "averageWeight": {
+        "male": "5.4 - 7.7 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Large, muscular, long fur",
+      "furPattern": ["Solid", "Tabby", "Bi-color"],
+      "gallery": [
+        "https://example.com/norwegian-forest-cat-1.jpg",
+        "https://example.com/norwegian-forest-cat-2.jpg"
+      ]
+    },
+    {
+      "breed": "Birman",
+      "latinName": "Felis catus",
+      "furColors": ["Seal", "Blue", "Chocolate", "Lilac", "Red", "Cream"],
+      "eyeColors": ["Blue"],
+      "averageWeight": {
+        "male": "4.5 - 5.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, semi-longhair, colorpoint with white gloves",
+      "furPattern": ["Color point", "Mitted"],
+      "gallery": [
+        "https://example.com/birman-1.jpg",
+        "https://example.com/birman-2.jpg"
+      ]
+    },
+    {
+      "breed": "Exotic Shorthair",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Cream", "Chocolate", "Lilac"],
+      "eyeColors": ["Blue", "Copper", "Odd-eyed"],
+      "averageWeight": {
+        "male": "3.6 - 6.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, cobby body, flat face",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Himalayan"],
+      "gallery": [
+        "https://example.com/exotic-shorthair-1.jpg",
+        "https://example.com/exotic-shorthair-2.jpg"
+      ]
+    },
+    {
+      "breed": "Tonkinese",
+      "latinName": "Felis catus",
+      "furColors": ["Natural", "Champagne", "Blue", "Platinum"],
+      "eyeColors": ["Aqua", "Blue", "Green"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.1 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, semi-foreign",
+      "furPattern": ["Mink", "Solid", "Color point"],
+      "gallery": [
+        "https://example.com/tonkinese-1.jpg",
+        "https://example.com/tonkinese-2.jpg"
+      ]
+    },
+    {
+      "breed": "Burmese",
+      "latinName": "Felis catus",
+      "furColors": ["Sable", "Champagne", "Blue", "Platinum"],
+      "eyeColors": ["Gold", "Yellow"],
+      "averageWeight": {
+        "male": "4.1 - 5.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, compact",
+      "furPattern": ["Solid"],
+      "gallery": [
+        "https://example.com/burmese-1.jpg",
+        "https://example.com/burmese-2.jpg"
+      ]
+    },
+    {
+      "breed": "Cornish Rex",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Gold", "Green", "Blue"],
+      "averageWeight": {
+        "male": "3.2 - 4.5 kg",
+        "female": "2.3 - 3.6 kg"
+      },
+      "bodySizeAndShape": "Small to medium-sized, slender, arched back",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/cornish-rex-1.jpg",
+        "https://example.com/cornish-rex-2.jpg"
+      ]
+    },
+    {
+      "breed": "Devon Rex",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Gold", "Green", "Blue"],
+      "averageWeight": {
+        "male": "3.2 - 4.5 kg",
+        "female": "2.3 - 3.6 kg"
+      },
+      "bodySizeAndShape": "Small to medium-sized, slender, large ears",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/devon-rex-1.jpg",
+        "https://example.com/devon-rex-2.jpg"
+      ]
+    },
+    {
+      "breed": "Manx",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream", "Silver"],
+      "eyeColors": ["Gold", "Copper", "Green", "Blue"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, rounded body, tailless or short tail",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Tortoiseshell"],
+      "gallery": [
+        "https://example.com/manx-1.jpg",
+        "https://example.com/manx-2.jpg"
+      ]
+    },
+    {
+      "breed": "Oriental",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Green", "Blue"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, slender, elongated",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/oriental-1.jpg",
+        "https://example.com/oriental-2.jpg"
+      ]
+    },
+    {
+      "breed": "Siberian",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream", "Silver"],
+      "eyeColors": ["Green", "Gold", "Copper"],
+      "averageWeight": {
+        "male": "5.4 - 7.7 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, muscular, semi-longhair",
+      "furPattern": ["Tabby", "Solid", "Color point"],
+      "gallery": [
+        "https://example.com/siberian-1.jpg",
+        "https://example.com/siberian-2.jpg"
+      ]
+    },
+    {
+      "breed": "Turkish Van",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Red", "Cream", "Blue"],
+      "eyeColors": ["Blue", "Amber", "Odd-eyed"],
+      "averageWeight": {
+        "male": "5.4 - 8.2 kg",
+        "female": "4.5 - 6.8 kg"
+      },
+      "bodySizeAndShape": "Medium to large, muscular, semi-longhair",
+      "furPattern": ["Van pattern", "Solid"],
+      "gallery": [
+        "https://example.com/turkish-van-1.jpg",
+        "https://example.com/turkish-van-2.jpg"
+      ]
+    },
+    {
+      "breed": "Chartreux",
+      "latinName": "Felis catus",
+      "furColors": ["Blue"],
+      "eyeColors": ["Copper", "Gold"],
+      "averageWeight": {
+        "male": "4.5 - 7.3 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, muscular, robust",
+      "furPattern": ["Solid"],
+      "gallery": [
+        "https://example.com/chartreux-1.jpg",
+        "https://example.com/chartreux-2.jpg"
+      ]
+    },
+    {
+      "breed": "American Bobtail",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream", "Brown"],
+      "eyeColors": ["Gold", "Copper", "Green", "Blue"],
+      "averageWeight": {
+        "male": "5.4 - 7.3 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, athletic, short bobbed tail",
+      "furPattern": ["Tabby", "Solid", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/american-bobtail-1.jpg",
+        "https://example.com/american-bobtail-2.jpg"
+      ]
+    },
+    {
+      "breed": "Japanese Bobtail",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Red", "Blue", "Cream"],
+      "eyeColors": ["Gold", "Copper", "Odd-eyed"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, slender, short pom-pom tail",
+      "furPattern": ["Solid", "Bi-color", "Tri-color", "Van"],
+      "gallery": [
+        "https://example.com/japanese-bobtail-1.jpg",
+        "https://example.com/japanese-bobtail-2.jpg"
+      ]
+    },
+    {
+      "breed": "Somali",
+      "latinName": "Felis catus",
+      "furColors": ["Ruddy", "Red", "Blue", "Fawn"],
+      "eyeColors": ["Gold", "Green", "Hazel"],
+      "averageWeight": {
+        "male": "4.1 - 5.4 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, semi-longhair",
+      "furPattern": ["Ticked"],
+      "gallery": [
+        "https://example.com/somali-1.jpg",
+        "https://example.com/somali-2.jpg"
+      ]
+    },
+    {
+      "breed": "Balinese",
+      "latinName": "Felis catus",
+      "furColors": ["Seal", "Blue", "Chocolate", "Lilac"],
+      "eyeColors": ["Blue"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, slender, elegant",
+      "furPattern": ["Color point"],
+      "gallery": [
+        "https://example.com/balinese-1.jpg",
+        "https://example.com/balinese-2.jpg"
+      ]
+    },
+    {
+      "breed": "Egyptian Mau",
+      "latinName": "Felis catus",
+      "furColors": ["Silver", "Bronze", "Smoke"],
+      "eyeColors": ["Green"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, athletic",
+      "furPattern": ["Spotted"],
+      "gallery": [
+        "https://example.com/egyptian-mau-1.jpg",
+        "https://example.com/egyptian-mau-2.jpg"
+      ]
+    },
+    {
+      "breed": "Havana Brown",
+      "latinName": "Felis catus",
+      "furColors": ["Chocolate"],
+      "eyeColors": ["Green"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, elegant",
+      "furPattern": ["Solid"],
+      "gallery": [
+        "https://example.com/havana-brown-1.jpg",
+        "https://example.com/havana-brown-2.jpg"
+      ]
+    },
+    {
+      "breed": "Korat",
+      "latinName": "Felis catus",
+      "furColors": ["Blue-silver"],
+      "eyeColors": ["Green"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, heart-shaped face",
+      "furPattern": ["Solid"],
+      "gallery": [
+        "https://example.com/korat-1.jpg",
+        "https://example.com/korat-2.jpg"
+      ]
+    },
+    {
+      "breed": "LaPerm",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Gold", "Green", "Blue", "Copper"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, curly coat",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/laperm-1.jpg",
+        "https://example.com/laperm-2.jpg"
+      ]
+    },
+    {
+      "breed": "Nebelung",
+      "latinName": "Felis catus",
+      "furColors": ["Blue"],
+      "eyeColors": ["Green"],
+      "averageWeight": {
+        "male": "4.5 - 6.8 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, semi-longhair",
+      "furPattern": ["Solid"],
+      "gallery": [
+        "https://example.com/nebelung-1.jpg",
+        "https://example.com/nebelung-2.jpg"
+      ]
+    },
+    {
+      "breed": "Ocicat",
+      "latinName": "Felis catus",
+      "furColors": [
+        "Tawny",
+        "Chocolate",
+        "Cinnamon",
+        "Blue",
+        "Lavender",
+        "Fawn"
+      ],
+      "eyeColors": ["Gold", "Green", "Copper"],
+      "averageWeight": {
+        "male": "4.5 - 6.8 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, athletic, muscular",
+      "furPattern": ["Spotted"],
+      "gallery": [
+        "https://example.com/ocicat-1.jpg",
+        "https://example.com/ocicat-2.jpg"
+      ]
+    },
+    {
+      "breed": "Savannah",
+      "latinName": "Felis catus",
+      "furColors": ["Black", "Brown", "Silver"],
+      "eyeColors": ["Green", "Gold", "Brown"],
+      "averageWeight": {
+        "male": "6.8 - 11.3 kg",
+        "female": "5.4 - 9.1 kg"
+      },
+      "bodySizeAndShape": "Large, tall, lean, athletic",
+      "furPattern": ["Spotted"],
+      "gallery": [
+        "https://example.com/savannah-1.jpg",
+        "https://example.com/savannah-2.jpg"
+      ]
+    },
+    {
+      "breed": "Selkirk Rex",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Gold", "Green", "Blue", "Copper"],
+      "averageWeight": {
+        "male": "4.5 - 7.3 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium to large, muscular, curly coat",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/selkirk-rex-1.jpg",
+        "https://example.com/selkirk-rex-2.jpg"
+      ]
+    },
+    {
+      "breed": "Singapura",
+      "latinName": "Felis catus",
+      "furColors": ["Sepia"],
+      "eyeColors": ["Green", "Hazel"],
+      "averageWeight": {
+        "male": "2.7 - 3.6 kg",
+        "female": "1.8 - 2.7 kg"
+      },
+      "bodySizeAndShape": "Small, compact, muscular",
+      "furPattern": ["Ticked"],
+      "gallery": [
+        "https://example.com/singapura-1.jpg",
+        "https://example.com/singapura-2.jpg"
+      ]
+    },
+    {
+      "breed": "Snowshoe",
+      "latinName": "Felis catus",
+      "furColors": ["Seal", "Blue", "Chocolate", "Lilac"],
+      "eyeColors": ["Blue"],
+      "averageWeight": {
+        "male": "4.5 - 5.9 kg",
+        "female": "3.2 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, white paws",
+      "furPattern": ["Color point", "Bi-color"],
+      "gallery": [
+        "https://example.com/snowshoe-1.jpg",
+        "https://example.com/snowshoe-2.jpg"
+      ]
+    },
+    {
+      "breed": "Toyger",
+      "latinName": "Felis catus",
+      "furColors": ["Brown", "Orange"],
+      "eyeColors": ["Green", "Gold"],
+      "averageWeight": {
+        "male": "4.5 - 6.8 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, tiger-like appearance",
+      "furPattern": ["Mackerel"],
+      "gallery": [
+        "https://example.com/toyger-1.jpg",
+        "https://example.com/toyger-2.jpg"
+      ]
+    },
+    {
+      "breed": "Turkish Angora",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream"],
+      "eyeColors": ["Blue", "Green", "Gold", "Odd-eyed"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, slender, elegant",
+      "furPattern": ["Solid", "Tabby", "Bi-color"],
+      "gallery": [
+        "https://example.com/turkish-angora-1.jpg",
+        "https://example.com/turkish-angora-2.jpg"
+      ]
+    },
+    {
+      "breed": "American Curl",
+      "latinName": "Felis catus",
+      "furColors": [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Cream",
+        "Chocolate",
+        "Lilac"
+      ],
+      "eyeColors": ["Gold", "Green", "Blue"],
+      "averageWeight": {
+        "male": "3.6 - 5.4 kg",
+        "female": "2.7 - 4.5 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, semi-foreign, curled ears",
+      "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
+      "gallery": [
+        "https://example.com/american-curl-1.jpg",
+        "https://example.com/american-curl-2.jpg"
+      ]
+    },
+    {
+      "breed": "American Wirehair",
+      "latinName": "Felis catus",
+      "furColors": ["White", "Black", "Blue", "Red", "Cream", "Silver"],
+      "eyeColors": ["Gold", "Green", "Blue"],
+      "averageWeight": {
+        "male": "4.5 - 6.8 kg",
+        "female": "3.6 - 5.4 kg"
+      },
+      "bodySizeAndShape": "Medium-sized, muscular, wiry coat",
+      "furPattern": ["Solid", "Tabby", "Bi-color"],
+      "gallery": [
+        "https://example.com/american-wirehair-1.jpg",
+        "https://example.com/american-wirehair-2.jpg"
+      ]
+    },
+    {
+      "breed": "Minskin",
+      "latinName": "Felis catus",
+      "furColors": ["Hairless", "Point colors"],
+      "eyeColors": ["Blue", "Green", "Gold"],
+      "averageWeight": {
+        "male": "1.8 - 3.2 kg",
+        "female": "1.4 - 2.7 kg"
+      },
+      "bodySizeAndShape": "Small, low-to-the-ground, short legs",
+      "furPattern": ["Hairless with fur points"],
+      "gallery": [
+        "https://example.com/minskin-1.jpg",
+        "https://example.com/minskin-2.jpg"
+      ]
+    }
+  ]
+}
