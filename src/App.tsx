@@ -23,13 +23,13 @@ function App() {
     <>
       {catData ? (
         <main>
-          {
-            catData.map((cat: ICatData)=>{
-              return(
-                <CatCard catData={cat}/>
-              )
-            })
-          }
+          {catData.map((cat: ICatData, i: number) => {
+            return (
+              <div key={`${cat.breed}-${i}`}>
+                <CatCard catData={cat} />
+              </div>
+            );
+          })}
         </main>
       ) : (
         <h1>Loading...</h1>

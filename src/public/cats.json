@@ -11,7 +11,7 @@
       },
       "bodySizeAndShape": "Large, muscular, rectangular body",
       "furPattern": ["Tabby", "Solid", "Bi-color"],
-      "gallery": "../public/assets/cats/cat1.jpg"
+      "gallery": "/assets/cats/cat16.jpg"
     },
     {
       "breed": "Siamese",
@@ -24,7 +24,7 @@
       },
       "bodySizeAndShape": "Medium-sized, sleek, elongated",
       "furPattern": ["Color point"],
-      "gallery": "../public/assets/cats/cat2.jpg"
+      "gallery": "/assets/cats/cat2.jpg"
     },
     {
       "breed": "Persian",
@@ -45,7 +45,7 @@
       },
       "bodySizeAndShape": "Medium-sized, cobby body with short legs",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Himalayan"],
-      "gallery": "../public/assets/cats/cat3.jpg"
+      "gallery": "/assets/cats/cat3.jpg"
     },
     {
       "breed": "Bengal",
@@ -58,7 +58,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, athletic",
       "furPattern": ["Spotted", "Marbled"],
-      "gallery": "../public/assets/cats/cat4.jpg"
+      "gallery": "/assets/cats/cat4.jpg"
     },
     {
       "breed": "Sphynx",
@@ -71,7 +71,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, wrinkled skin",
       "furPattern": ["Hairless"],
-      "gallery": "../public/assets/cats/cat5.jpg"
+      "gallery": "/assets/cats/cat5.jpg"
     },
     {
       "breed": "Russian Blue",
@@ -84,7 +84,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, elegant",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat6.jpg"
+      "gallery": "/assets/cats/cat6.jpg"
     },
     {
       "breed": "Scottish Fold",
@@ -97,7 +97,7 @@
       },
       "bodySizeAndShape": "Medium-sized, rounded body, folded ears",
       "furPattern": ["Solid", "Tabby", "Bi-color"],
-      "gallery": "../public/assets/cats/cat7.jpg"
+      "gallery": "/assets/cats/cat7.jpg"
     },
     {
       "breed": "Ragdoll",
@@ -110,7 +110,7 @@
       },
       "bodySizeAndShape": "Large, muscular, semi-longhair",
       "furPattern": ["Color point", "Mitted", "Bi-color"],
-      "gallery": "../public/assets/cats/cat8.jpg"
+      "gallery": "/assets/cats/cat8.jpg"
     },
     {
       "breed": "British Shorthair",
@@ -123,7 +123,7 @@
       },
       "bodySizeAndShape": "Medium to large, stocky, round face",
       "furPattern": ["Solid", "Tabby", "Bi-color"],
-      "gallery": "../public/assets/cats/cat9.jpg"
+      "gallery": "/assets/cats/cat9.jpg"
     },
     {
       "breed": "Abyssinian",
@@ -136,7 +136,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, athletic",
       "furPattern": ["Ticked"],
-      "gallery": "../public/assets/cats/cat10.jpg"
+      "gallery": "/assets/cats/cat10.jpg"
     },
     {
       "breed": "Norwegian Forest Cat",
@@ -149,7 +149,7 @@
       },
       "bodySizeAndShape": "Large, muscular, long fur",
       "furPattern": ["Solid", "Tabby", "Bi-color"],
-      "gallery": "../public/assets/cats/cat11.jpg"
+      "gallery": "/assets/cats/cat11.jpg"
     },
     {
       "breed": "Birman",
@@ -162,7 +162,7 @@
       },
       "bodySizeAndShape": "Medium-sized, semi-longhair, colorpoint with white gloves",
       "furPattern": ["Color point", "Mitted"],
-      "gallery": "../public/assets/cats/cat12.jpg"
+      "gallery": "/assets/cats/cat12.jpg"
     },
     {
       "breed": "Exotic Shorthair",
@@ -175,7 +175,7 @@
       },
       "bodySizeAndShape": "Medium-sized, cobby body, flat face",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Himalayan"],
-      "gallery": "../public/assets/cats/cat13.jpg"
+      "gallery": "/assets/cats/cat13.jpg"
     },
     {
       "breed": "Tonkinese",
@@ -188,7 +188,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, semi-foreign",
       "furPattern": ["Mink", "Solid", "Color point"],
-      "gallery": "../public/assets/cats/cat14.jpg"
+      "gallery": "/assets/cats/cat14.jpg"
     },
     {
       "breed": "Burmese",
@@ -201,7 +201,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, compact",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat15.jpg"
+      "gallery": "/assets/cats/cat15.jpg"
     },
     {
       "breed": "Cornish Rex",
@@ -222,7 +222,7 @@
       },
       "bodySizeAndShape": "Small to medium-sized, slender, arched back",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat16.jpg"
+      "gallery": "/assets/cats/cat16.jpg"
     },
     {
       "breed": "Devon Rex",
@@ -243,7 +243,7 @@
       },
       "bodySizeAndShape": "Small to medium-sized, slender, large ears",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat17.jpg"
+      "gallery": "/assets/cats/cat17.jpg"
     },
     {
       "breed": "Manx",
@@ -256,7 +256,7 @@
       },
       "bodySizeAndShape": "Medium-sized, rounded body, tailless or short tail",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Tortoiseshell"],
-      "gallery": "../public/assets/cats/cat18.jpg"
+      "gallery": "/assets/cats/cat18.jpg"
     },
     {
       "breed": "Oriental",
@@ -277,7 +277,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, elongated",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat19.jpg"
+      "gallery": "/assets/cats/cat19.jpg"
     },
     {
       "breed": "Siberian",
@@ -290,7 +290,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, semi-longhair",
       "furPattern": ["Tabby", "Solid", "Color point"],
-      "gallery": "../public/assets/cats/cat20.jpg"
+      "gallery": "/assets/cats/cat20.jpg"
     },
     {
       "breed": "Turkish Van",
@@ -303,7 +303,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, semi-longhair",
       "furPattern": ["Van pattern", "Solid"],
-      "gallery": "../public/assets/cats/cat21.jpg"
+      "gallery": "/assets/cats/cat21.jpg"
     },
     {
       "breed": "Chartreux",
@@ -316,7 +316,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, robust",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat22.jpg"
+      "gallery": "/assets/cats/cat22.jpg"
     },
     {
       "breed": "American Bobtail",
@@ -329,7 +329,7 @@
       },
       "bodySizeAndShape": "Medium to large, athletic, short bobbed tail",
       "furPattern": ["Tabby", "Solid", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat23.jpg"
+      "gallery": "/assets/cats/cat23.jpg"
     },
     {
       "breed": "Japanese Bobtail",
@@ -342,7 +342,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, short pom-pom tail",
       "furPattern": ["Solid", "Bi-color", "Tri-color", "Van"],
-      "gallery": "../public/assets/cats/cat24.jpg"
+      "gallery": "/assets/cats/cat24.jpg"
     },
     {
       "breed": "Somali",
@@ -355,7 +355,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, semi-longhair",
       "furPattern": ["Ticked"],
-      "gallery": "../public/assets/cats/cat25.jpg"
+      "gallery": "/assets/cats/cat25.jpg"
     },
     {
       "breed": "Balinese",
@@ -368,7 +368,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, elegant",
       "furPattern": ["Color point"],
-      "gallery": "../public/assets/cats/cat26.jpg"
+      "gallery": "/assets/cats/cat26.jpg"
     },
     {
       "breed": "Egyptian Mau",
@@ -381,7 +381,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, athletic",
       "furPattern": ["Spotted"],
-      "gallery": "../public/assets/cats/cat27.jpg"
+      "gallery": "/assets/cats/cat27.jpg"
     },
     {
       "breed": "Havana Brown",
@@ -394,7 +394,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, elegant",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat28.jpg"
+      "gallery": "/assets/cats/cat28.jpg"
     },
     {
       "breed": "Korat",
@@ -407,7 +407,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, heart-shaped face",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat29.jpg"
+      "gallery": "/assets/cats/cat29.jpg"
     },
     {
       "breed": "LaPerm",
@@ -428,7 +428,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, curly coat",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat30.jpg"
+      "gallery": "/assets/cats/cat30.jpg"
     },
     {
       "breed": "Nebelung",
@@ -441,7 +441,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, semi-longhair",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat31.jpg"
+      "gallery": "/assets/cats/cat31.jpg"
     },
     {
       "breed": "Ocicat",
@@ -461,7 +461,7 @@
       },
       "bodySizeAndShape": "Medium to large, athletic, muscular",
       "furPattern": ["Spotted"],
-      "gallery": "../public/assets/cats/cat32.jpg"
+      "gallery": "/assets/cats/cat32.jpg"
     },
     {
       "breed": "Savannah",
@@ -474,7 +474,7 @@
       },
       "bodySizeAndShape": "Large, tall, lean, athletic",
       "furPattern": ["Spotted"],
-      "gallery": "../public/assets/cats/cat33.jpg"
+      "gallery": "/assets/cats/cat33.jpg"
     },
     {
       "breed": "Selkirk Rex",
@@ -495,7 +495,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, curly coat",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat34.jpg"
+      "gallery": "/assets/cats/cat34.jpg"
     },
     {
       "breed": "Singapura",
@@ -508,7 +508,7 @@
       },
       "bodySizeAndShape": "Small, compact, muscular",
       "furPattern": ["Ticked"],
-      "gallery": "../public/assets/cats/cat35.jpg"
+      "gallery": "/assets/cats/cat35.jpg"
     },
     {
       "breed": "Snowshoe",
@@ -521,7 +521,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, white paws",
       "furPattern": ["Color point", "Bi-color"],
-      "gallery": "../public/assets/cats/cat36.jpg"
+      "gallery": "/assets/cats/cat36.jpg"
     },
     {
       "breed": "Toyger",
@@ -534,7 +534,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, tiger-like appearance",
       "furPattern": ["Mackerel"],
-      "gallery": "../public/assets/cats/cat37.jpg"
+      "gallery": "/assets/cats/cat37.jpg"
     },
     {
       "breed": "Turkish Angora",
@@ -547,7 +547,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, elegant",
       "furPattern": ["Solid", "Tabby", "Bi-color"],
-      "gallery": "../public/assets/cats/cat38.jpg"
+      "gallery": "/assets/cats/cat38.jpg"
     },
     {
       "breed": "American Curl",
@@ -568,7 +568,7 @@
       },
       "bodySizeAndShape": "Medium-sized, semi-foreign, curled ears",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat39.jpg"
+      "gallery": "/assets/cats/cat39.jpg"
     },
     {
       "breed": "American Wirehair",
@@ -581,7 +581,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, wiry coat",
       "furPattern": ["Solid", "Tabby", "Bi-color"],
-      "gallery": "../public/assets/cats/cat40.jpg"
+      "gallery": "/assets/cats/cat40.jpg"
     },
     {
       "breed": "Minskin",
@@ -594,7 +594,7 @@
       },
       "bodySizeAndShape": "Small, low-to-the-ground, short legs",
       "furPattern": ["Hairless with fur points"],
-      "gallery": "../public/assets/cats/cat41.jpg"
+      "gallery": "/assets/cats/cat41.jpg"
     },
     {
       "breed": "Chartreux",
@@ -607,7 +607,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, robust",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat42.jpg"
+      "gallery": "/assets/cats/cat42.jpg"
     },
     {
       "breed": "Korat",
@@ -620,7 +620,7 @@
       },
       "bodySizeAndShape": "Medium-sized, muscular, heart-shaped face",
       "furPattern": ["Solid"],
-      "gallery": "../public/assets/cats/cat43.jpg"
+      "gallery": "/assets/cats/cat43.jpg"
     },
     {
       "breed": "LaPerm",
@@ -633,7 +633,7 @@
       },
       "bodySizeAndShape": "Medium-sized, athletic, curly coat",
       "furPattern": ["Solid", "Tabby", "Bi-color", "Color point"],
-      "gallery": "../public/assets/cats/cat44.jpg"
+      "gallery": "/assets/cats/cat44.jpg"
     },
     {
       "breed": "Manx",
@@ -646,7 +646,7 @@
       },
       "bodySizeAndShape": "Medium-sized, rounded, tailless or short-tailed",
       "furPattern": ["Solid", "Tabby", "Tortoiseshell", "Calico"],
-      "gallery": "../public/assets/cats/cat45.jpg"
+      "gallery": "/assets/cats/cat45.jpg"
     },
     {
       "breed": "Peterbald",
@@ -659,7 +659,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, elegant",
       "furPattern": ["Hairless", "Velour", "Brush", "Straight coat"],
-      "gallery": "../public/assets/cats/cat46.jpg"
+      "gallery": "/assets/cats/cat46.jpg"
     },
     {
       "breed": "Pixie-bob",
@@ -672,7 +672,7 @@
       },
       "bodySizeAndShape": "Medium to large, muscular, short bobbed tail",
       "furPattern": ["Spotted", "Mackerel"],
-      "gallery": "../public/assets/cats/cat47.jpg"
+      "gallery": "/assets/cats/cat47.jpg"
     },
     {
       "breed": "Scottish Fold",
@@ -685,7 +685,7 @@
       },
       "bodySizeAndShape": "Medium-sized, rounded, folded ears",
       "furPattern": ["Solid", "Tabby", "Tortoiseshell", "Color point"],
-      "gallery": "../public/assets/cats/cat48.jpg"
+      "gallery": "/assets/cats/cat48.jpg"
     },
     {
       "breed": "Turkish Angora",
@@ -698,7 +698,7 @@
       },
       "bodySizeAndShape": "Medium-sized, slender, silky coat",
       "furPattern": ["Solid", "Tabby", "Tortoiseshell", "Color point"],
-      "gallery": "../public/assets/cats/cat49.jpg"
+      "gallery": "/assets/cats/cat49.jpg"
     },
     {
       "breed": "Turkish Van",
@@ -711,7 +711,7 @@
       },
       "bodySizeAndShape": "Large, muscular, semi-longhair",
       "furPattern": ["Van pattern"],
-      "gallery": "../public/assets/cats/cat50.jpg"
+      "gallery": "/assets/cats/cat50.jpg"
     }
   ]
 }
