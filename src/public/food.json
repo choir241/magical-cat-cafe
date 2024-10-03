@@ -1,194 +1,192 @@
 {
-  "food": [
-    {
-      "appetizers": [
-        {
-          "name": "Purr-fect Catnip Poppers",
-          "description": "Crispy breaded cheese bites",
-          "price": 7.99,
-          "gallery": "../public/assets/food/food1.jpg"
-        },
-        {
-          "name": "Whisker Twister Fries",
-          "description": "Curly fries seasoned with fish salt, served with a side of 'meow-nnaise'",
-          "price": 6.99,
-          "gallery": "../public/assets/food/food2.jpg"
-        },
-        {
-          "name": "Feline Fiesta Nachos",
-          "description": "Corn chips topped with tuna salsa, 'cat-cheddar' cheese, and sour cream",
-          "price": 9.99,
-          "gallery": "../public/assets/food/food3.jpg"
-        },
-        {
-          "name": "Paw-some Bruschetta",
-          "description": "Toasted baguette slices with tomato, basil, and a drizzle of catnip oil",
-          "price": 8.99,
-          "gallery": "../public/assets/food/food4.jpg"
-        },
-        {
-          "name": "Kitty Quesadillas",
-          "description": "Cheese quesadillas, served with cat-salsa and guacamole",
-          "price": 8.99,
-          "gallery": "../public/assets/food/food5.jpg"
-        }
-      ],
-      "mainDishes": [
-        {
-          "name": "Meow Mignon",
-          "description": "Tender beef filet with a catnip-infused herb crust, served with roasted vegetables",
-          "price": 24.99,
-          "gallery": "../public/assets/food/food6.jpg"
-        },
-        {
-          "name": "Fur-rocious Fish Tacos",
-          "description": "Grilled fish tacos with slaw and a spicy 'cat-sabi' mayo",
-          "price": 16.99,
-          "gallery": "../public/assets/food/food7.jpg"
-        },
-        {
-          "name": "Claw-some Crab Cakes",
-          "description": "Pan-seared crab cakes served with a zesty lemon-catnip aioli",
-          "price": 22.99,
-          "gallery": "../public/assets/food/food8.jpg"
-        },
-        {
-          "name": "Purr-mesan Chicken",
-          "description": "Breaded chicken cutlet topped with marinara and melted mozzarella",
-          "price": 18.99,
-          "gallery": "../public/assets/food/food9.jpg"
-        },
-        {
-          "name": "Salmon Sushi Rolls",
-          "description": "Fresh salmon rolls with avocado",
-          "price": 20.99,
-          "gallery": "../public/assets/food/food10.jpg"
-        },
-        {
-          "name": "Tabby's Tuna Melt",
-          "description": "Open-faced tuna melt on artisanal bread with melted cheddar",
-          "price": 14.99,
-          "gallery": "../public/assets/food/food11.jpg"
-        },
-        {
-          "name": "Kitty Carbonara",
-          "description": "Creamy pasta with bacon, eggs, and Parmesan, garnished with cat-shaped crackers",
-          "price": 17.99,
-          "gallery": "../public/assets/food/food12.jpg"
-        },
-        {
-          "name": "Siamese Stir-Fry",
-          "description": "Wok-tossed vegetables and chicken in a savory sauce, served over rice",
-          "price": 16.99,
-          "gallery": "../public/assets/food/food13.jpg"
-        },
-        {
-          "name": "Persian Pita Pocket",
-          "description": "Stuffed pita with falafel, hummus, and fresh veggies",
-          "price": 15.99,
-          "gallery": "../public/assets/food/food14.jpg"
-        },
-        {
-          "name": "Calico Calzone",
-          "description": "Folded pizza dough filled with a medley of cheeses and toppings",
-          "price": 18.99,
-          "gallery": "../public/assets/food/food15.jpg"
-        },
-        {
-          "name": "Sphinx's Spicy Curry",
-          "description": "Aromatic vegetable curry served with basmati rice and naan bread",
-          "price": 19.99,
-          "gallery": "../public/assets/food/food16.jpg"
-        },
-        {
-          "name": "Ragdoll Ravioli",
-          "description": "Cheese-filled ravioli in a creamy tomato sauce with fresh basil",
-          "price": 16.99,
-          "gallery": "../public/assets/food/food17.jpg"
-        },
-        {
-          "name": "Bengal Burger",
-          "description": "Juicy beef patty topped with cheese, lettuce, and special 'purr-naise' sauce",
-          "price": 15.99,
-          "gallery": "../public/assets/food/food18.jpg"
-        },
-        {
-          "name": "Abyssinian Avocado Toast",
-          "description": "Multigrain toast topped with smashed avocado, cherry tomatoes, and microgreens",
-          "price": 13.99,
-          "gallery": "../public/assets/food/food19.jpg"
-        },
-        {
-          "name": "Sphynx Seafood Paella",
-          "description": "Spanish-style rice dish with an assortment of seafood and saffron",
-          "price": 23.99,
-          "gallery": "../public/assets/food/food20.jpg"
-        }
-      ],
-      "desserts": [
-        {
-          "name": "Paw Print Cookies",
-          "description": "Chocolate chip cookies with paw print designs, served with milk",
-          "price": 6.99,
-          "gallery": "../public/assets/food/food21.jpg"
-        },
-        {
-          "name": "Kitty Litter Cake",
-          "description": "Chocolate cake crumbs and vanilla pudding, artfully presented to resemble... you know",
-          "price": 8.99,
-          "gallery": "../public/assets/food/food22.jpg"
-        },
-        {
-          "name": "Catnip Crème Brûlée",
-          "description": "Classic French dessert with a hint of catnip flavor",
-          "price": 9.99,
-          "gallery": "../public/assets/food/food23.jpg"
-        },
-        {
-          "name": "Meow-cha Ice Cream",
-          "description": "Green tea ice cream scoops",
-          "price": 7.99,
-          "gallery": "../public/assets/food/food24.jpg"
-        },
-        {
-          "name": "Tabby's Tiramisu",
-          "description": "Coffee-soaked ladyfingers layered with mascarpone cream",
-          "price": 8.99,
-          "gallery": "../public/assets/food/food25.jpg"
-        }
-      ],
-      "drinks": [
-        {
-          "name": "Cat-puccino",
-          "description": "Espresso with frothed milk, topped with a cat-face cocoa design",
-          "price": 4.99,
-          "gallery": "../public/assets/food/food26.jpg"
-        },
-        {
-          "name": "Meow-jito",
-          "description": "Refreshing mint and lime mocktail with a splash of catnip syrup",
-          "price": 5.99,
-          "gallery": "../public/assets/food/food27.jpg"
-        },
-        {
-          "name": "Purr-ple Lemonade",
-          "description": "Butterfly pea flower-infused lemonade that changes color",
-          "price": 4.99,
-          "gallery": "../public/assets/food/food28.jpg"
-        },
-        {
-          "name": "Whisker Sour",
-          "description": "Tangy citrus drink with a hint of honey and a frothy top",
-          "price": 5.99,
-          "gallery": "../public/assets/food/food29.jpg"
-        },
-        {
-          "name": "Kitty Matcha Latte",
-          "description": "Creamy matcha green tea latte",
-          "price": 5.99,
-          "gallery": "../public/assets/food/food30.jpg"
-        }
-      ]
-    }
-  ]
+  "food": {
+    "appetizers": [
+      {
+        "name": "Purr-fect Catnip Poppers",
+        "description": "Crispy breaded cheese bites",
+        "price": 7.99,
+        "gallery": "/assets/food/food1.jpg"
+      },
+      {
+        "name": "Whisker Twister Fries",
+        "description": "Curly fries seasoned with fish salt, served with a side of 'meow-nnaise'",
+        "price": 6.99,
+        "gallery": "/assets/food/food2.jpg"
+      },
+      {
+        "name": "Feline Fiesta Nachos",
+        "description": "Corn chips topped with tuna salsa, 'cat-cheddar' cheese, and sour cream",
+        "price": 9.99,
+        "gallery": "/assets/food/food3.jpg"
+      },
+      {
+        "name": "Paw-some Bruschetta",
+        "description": "Toasted baguette slices with tomato, basil, and a drizzle of catnip oil",
+        "price": 8.99,
+        "gallery": "/assets/food/food4.jpg"
+      },
+      {
+        "name": "Kitty Quesadillas",
+        "description": "Cheese quesadillas, served with cat-salsa and guacamole",
+        "price": 8.99,
+        "gallery": "/assets/food/food5.jpg"
+      }
+    ],
+    "mainDishes": [
+      {
+        "name": "Meow Mignon",
+        "description": "Tender beef filet with a catnip-infused herb crust, served with roasted vegetables",
+        "price": 24.99,
+        "gallery": "/assets/food/food6.jpg"
+      },
+      {
+        "name": "Fur-rocious Fish Tacos",
+        "description": "Grilled fish tacos with slaw and a spicy 'cat-sabi' mayo",
+        "price": 16.99,
+        "gallery": "/assets/food/food7.jpg"
+      },
+      {
+        "name": "Claw-some Crab Cakes",
+        "description": "Pan-seared crab cakes served with a zesty lemon-catnip aioli",
+        "price": 22.99,
+        "gallery": "/assets/food/food8.jpg"
+      },
+      {
+        "name": "Purr-mesan Chicken",
+        "description": "Breaded chicken cutlet topped with marinara and melted mozzarella",
+        "price": 18.99,
+        "gallery": "/assets/food/food9.jpg"
+      },
+      {
+        "name": "Salmon Sushi Rolls",
+        "description": "Fresh salmon rolls with avocado",
+        "price": 20.99,
+        "gallery": "/assets/food/food10.jpg"
+      },
+      {
+        "name": "Tabby's Tuna Melt",
+        "description": "Open-faced tuna melt on artisanal bread with melted cheddar",
+        "price": 14.99,
+        "gallery": "/assets/food/food11.jpg"
+      },
+      {
+        "name": "Kitty Carbonara",
+        "description": "Creamy pasta with bacon, eggs, and Parmesan, garnished with cat-shaped crackers",
+        "price": 17.99,
+        "gallery": "/assets/food/food12.jpg"
+      },
+      {
+        "name": "Siamese Stir-Fry",
+        "description": "Wok-tossed vegetables and chicken in a savory sauce, served over rice",
+        "price": 16.99,
+        "gallery": "/assets/food/food13.jpg"
+      },
+      {
+        "name": "Persian Pita Pocket",
+        "description": "Stuffed pita with falafel, hummus, and fresh veggies",
+        "price": 15.99,
+        "gallery": "/assets/food/food14.jpg"
+      },
+      {
+        "name": "Calico Calzone",
+        "description": "Folded pizza dough filled with a medley of cheeses and toppings",
+        "price": 18.99,
+        "gallery": "/assets/food/food15.jpg"
+      },
+      {
+        "name": "Sphinx's Spicy Curry",
+        "description": "Aromatic vegetable curry served with basmati rice and naan bread",
+        "price": 19.99,
+        "gallery": "/assets/food/food16.jpg"
+      },
+      {
+        "name": "Ragdoll Ravioli",
+        "description": "Cheese-filled ravioli in a creamy tomato sauce with fresh basil",
+        "price": 16.99,
+        "gallery": "/assets/food/food17.jpg"
+      },
+      {
+        "name": "Bengal Burger",
+        "description": "Juicy beef patty topped with cheese, lettuce, and special 'purr-naise' sauce",
+        "price": 15.99,
+        "gallery": "/assets/food/food18.jpg"
+      },
+      {
+        "name": "Abyssinian Avocado Toast",
+        "description": "Multigrain toast topped with smashed avocado, cherry tomatoes, and microgreens",
+        "price": 13.99,
+        "gallery": "/assets/food/food19.jpg"
+      },
+      {
+        "name": "Sphynx Seafood Paella",
+        "description": "Spanish-style rice dish with an assortment of seafood and saffron",
+        "price": 23.99,
+        "gallery": "/assets/food/food20.jpg"
+      }
+    ],
+    "desserts": [
+      {
+        "name": "Paw Print Cookies",
+        "description": "Chocolate chip cookies with paw print designs, served with milk",
+        "price": 6.99,
+        "gallery": "/assets/food/food21.jpg"
+      },
+      {
+        "name": "Kitty Litter Cake",
+        "description": "Chocolate cake crumbs and vanilla pudding, artfully presented to resemble... you know",
+        "price": 8.99,
+        "gallery": "/assets/food/food22.jpg"
+      },
+      {
+        "name": "Catnip Crème Brûlée",
+        "description": "Classic French dessert with a hint of catnip flavor",
+        "price": 9.99,
+        "gallery": "/assets/food/food23.jpg"
+      },
+      {
+        "name": "Meow-cha Ice Cream",
+        "description": "Green tea ice cream scoops",
+        "price": 7.99,
+        "gallery": "/assets/food/food24.jpg"
+      },
+      {
+        "name": "Tabby's Tiramisu",
+        "description": "Coffee-soaked ladyfingers layered with mascarpone cream",
+        "price": 8.99,
+        "gallery": "/assets/food/food25.jpg"
+      }
+    ],
+    "drinks": [
+      {
+        "name": "Cat-puccino",
+        "description": "Espresso with frothed milk, topped with a cat-face cocoa design",
+        "price": 4.99,
+        "gallery": "/assets/food/food26.jpg"
+      },
+      {
+        "name": "Meow-jito",
+        "description": "Refreshing mint and lime mocktail with a splash of catnip syrup",
+        "price": 5.99,
+        "gallery": "/assets/food/food27.jpg"
+      },
+      {
+        "name": "Purr-ple Lemonade",
+        "description": "Butterfly pea flower-infused lemonade that changes color",
+        "price": 4.99,
+        "gallery": "/assets/food/food28.jpg"
+      },
+      {
+        "name": "Whisker Sour",
+        "description": "Tangy citrus drink with a hint of honey and a frothy top",
+        "price": 5.99,
+        "gallery": "/assets/food/food29.jpg"
+      },
+      {
+        "name": "Kitty Matcha Latte",
+        "description": "Creamy matcha green tea latte",
+        "price": 5.99,
+        "gallery": "/assets/food/food30.jpg"
+      }
+    ]
+  }
 }

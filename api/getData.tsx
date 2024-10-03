@@ -44,7 +44,7 @@ export interface IFoodCategory {
 export async function getFoodData({
   setFoodData,
 }: {
-  setFoodData: (foodData: IFoodCategory[]) => void;
+  setFoodData: (foodData: IFoodCategory) => void;
 }) {
   try {
     const foodData = await import("../src/public/food.json");
