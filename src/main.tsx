@@ -15,5 +15,5 @@ createRoot(document.getElementById("root")!).render(
         </Routes>
       </Suspense>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
