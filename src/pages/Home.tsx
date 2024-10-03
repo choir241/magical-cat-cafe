@@ -1,14 +1,13 @@
-import "./App.css";
 import { useState, useMemo } from "react";
 import {
   getCatData,
   ICatData,
   getFoodData,
   IFoodCategory,
-} from "../api/getData";
-import CatCard from "../components/CatCard";
+} from "../../api/getData";
+import CatCard from "../../components/CatCard";
 
-export default function App() {
+export default function Home() {
   const [catData, setCatData] = useState<ICatData[]>();
   const [foodData, setFoodData] = useState<IFoodCategory[]>();
 
