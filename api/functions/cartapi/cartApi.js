@@ -1,8 +1,11 @@
-import { Client, Users } from 'node-appwrite';
-export default async ({ req, res, log, error }) => {
-  return res.json({
-    name: "Hatsune Miku"
-  });
+import AppExpress from "itznotabug/appexpress";
 
+const app = new AppExpress();
 
+const getRoutes = (req, res) => {
+  res.json({routes: ["/"]});
 };
+
+app.get("/", getRoutes);
+
+export default async (context) => await app.attach(context)
