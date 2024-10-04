@@ -9,6 +9,7 @@ import {
 } from "../api/getData";
 import CatCard from "../components/CatCard";
 import FoodCard from "../components/FoodCard";
+import { Button } from "../components/ui/button";
 
 export default function App() {
   const [catData, setCatData] = useState<ICatData[]>();
@@ -79,6 +80,8 @@ export default function App() {
             );
           })}
           </section>  */}
+
+          <Button variant="outline">Button</Button>
         </main>
       ) : (
         <h1>Loading...</h1>
