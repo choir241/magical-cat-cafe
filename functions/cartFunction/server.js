@@ -4,4 +4,6 @@ export default async ({ req, res, log, error }) => {
       return res.send('Hello, World!');
     }
 
+    return res.send("hello world")
+
   };
