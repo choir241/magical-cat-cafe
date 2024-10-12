@@ -32,3 +32,15 @@ export async function editCart({
     throw new Error(`There was an error editing your cart, ${error}`);
   }
 }
+
+export async function DeleteCart({ cartId }: { cartId: string }) {
+  try {
+    await databases.deleteDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_CART_COLLECTION,
+      cartId,
+    );
+  } catch (error) {
+    throw new Error(`${error}`);
+  }
+}
