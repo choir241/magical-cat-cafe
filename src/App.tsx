@@ -22,7 +22,7 @@ export default function App() {
     });
   }, []);
 
-  console.log(import.meta.env.VITE_PROJECT_ID)
+  console.log(import.meta.env.VITE_PROJECT_ID);
 
   return (
     <>
