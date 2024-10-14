@@ -1,9 +1,15 @@
-export default async ({ req, res, log, error }) => {
+import AppExpress from "@itznotabug/appexpress";
+const app = new AppExpress();
 
-    if (req.method === 'GET') {
-      return res.send('Hello, World!');
-    }
+const getRoutes = (request, response) => {
+  response.json({ routes: ["/", "/addToCart"]});
+};
 
-    return res.send("hello world")
+const getCart = (request, response) => {
+  response.json({ name: "Hatsune Miku" });
+};
 
-  };
+app.get("/", getRoutes);
+app.get("/addToCart", getCart);
+
+export default async (context) => await app.attach(context);
