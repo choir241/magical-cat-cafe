@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@itznotabug/appexpress": "^1.6.2"
+    "@itznotabug/appexpress": "^1.6.2",
+    "appwrite": "^16.0.2",
+    "dotenv": "^16.4.5"
   }
 }
