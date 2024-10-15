@@ -3,18 +3,11 @@ const router = new AppExpress.Router();
 import { databases, ID } from "../appwrite.js";
 const addToCart = async (request, response) => {
     try{
-        // const cartItem = {
-        //     name: request.body.name,
-        //     description: request.body.description,
-        //     price: request.body.price,
-        //     gallery: request.body.gallery
-        // };
-
         const cartItem = {
-            name: "test",
-            description: "miku",
-            price: 10.00,
-            gallery: "vtuber"
+            name: request.body.name,
+            description: request.body.description,
+            price: request.body.price,
+            gallery: request.body.gallery
         };
     
         const data = await databases.createDocument(
@@ -26,7 +19,7 @@ const addToCart = async (request, response) => {
     
         response.json({ data });
     }catch(error){
-        response.json({error});
+        response.status(500).json({error});
     }
 };
 
