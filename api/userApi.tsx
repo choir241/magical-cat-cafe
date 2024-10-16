@@ -15,7 +15,7 @@ export async function signupAccount({accountData}: {accountData: IAccount }){
             accountData.name
         );
 
-        loginAccount({accountData})
+        loginAccount({accountData});
     }catch(error){
         throw new Error(`There was an error creating your account, ${error}`);
     }
@@ -29,5 +29,13 @@ export async function loginAccount({accountData}: {accountData: IAccount}){
         );
     }catch(error){
         throw new Error(`There was an error logging into your account, ${error}`);
+    }
+}
+
+export async function logoutAccount(){
+    try{
+        await account.deleteSessions();
+    }catch(error){
+        throw new Error(`There was an error logging out of your account, ${error}`);
     }
 }
