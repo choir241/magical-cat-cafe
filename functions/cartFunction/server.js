@@ -11,7 +11,7 @@ const routes = (request, response) => {
     getRoutes: ["/"],
     putRoutes: ["/editCart/:docId"],
     postRoutes: ["/addToCart", "/signup"],
-    deleteRoutes: ["/deleteCart/:docId"]
+    deleteRoutes: ["/deleteCart/:docId", "/logout"]
   });
 };
 
