@@ -21,6 +21,18 @@ const signupAccount = async (request, response) => {
     }
 }
 
+const loginAccount = async (request, response) => {
+    try{
+        await account.createEmailPasswordSession(
+            accountData.email,
+            accountData.password
+        );
+    }catch(error){
+        response.json({error});
+    }
+}
+
 router.post("/signup", signupAccount);
+router.post("/login", loginAccount);
 
 export default router;
