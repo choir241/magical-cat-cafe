@@ -24,9 +24,17 @@ const signupAccount = async (request, response) => {
 const loginAccount = async (request, response) => {
     try{
         await account.createEmailPasswordSession(
-            accountData.email,
-            accountData.password
+            request.body.email,
+            request.body.password
         );
+    }catch(error){
+        response.json({error});
+    }
+}
+
+const logoutAccount = async (request, response) => {
+    try{
+        await account.deleteSessions();
     }catch(error){
         response.json({error});
     }
@@ -34,5 +42,6 @@ const loginAccount = async (request, response) => {
 
 router.post("/signup", signupAccount);
 router.post("/login", loginAccount);
+router.post("/logout", logoutAccount);
 
 export default router;
