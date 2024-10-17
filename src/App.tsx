@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import {
   getCatData,
   ICatData,
@@ -10,22 +10,22 @@ import {
 import CatCard from "../components/CatCard";
 import FoodCard from "../components/FoodCard";
 import { Button } from "../components/ui/button";
+import { ProfileForm } from "../components/Login";
 
 export default function App() {
   const [catData, setCatData] = useState<ICatData[]>();
   const [foodData, setFoodData] = useState<IFoodCategory>();
 
-  useMemo(() => {
+  useEffect(() => {
     getCatData({ setCatData: (catData: ICatData[]) => setCatData(catData) });
     getFoodData({
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
   }, []);
 
-  console.log(import.meta.env.VITE_PROJECT_ID);
-
   return (
     <>
+      <ProfileForm />
       {catData && foodData ? (
         <main>
           {/* Cat Cards */}
