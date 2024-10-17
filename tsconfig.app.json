@@ -23,5 +23,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "components/lib", "api"]
+  "include": [
+    "src",
+    "components/lib",
+    "api",
+    "components/ui/form.tsx",
+    "components/ui/label.tsx"
+  ]
 }
