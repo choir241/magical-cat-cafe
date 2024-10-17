@@ -10,11 +10,17 @@ import {
 import CatCard from "../components/CatCard";
 import FoodCard from "../components/FoodCard";
 import { Button } from "../components/ui/button";
-import { ProfileForm } from "../components/Login";
+import { FormComponent } from "../components/Form";
+import {loginAccount, signupAccount} from "../api/userApi"
 
 export default function App() {
   const [catData, setCatData] = useState<ICatData[]>();
   const [foodData, setFoodData] = useState<IFoodCategory>();
+
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
 
   useEffect(() => {
     getCatData({ setCatData: (catData: ICatData[]) => setCatData(catData) });
@@ -25,7 +31,7 @@ export default function App() {
 
   return (
     <>
-      <ProfileForm />
+      <FormComponent onSubmit={()=>signupAccount({accountData:{name, email, password}})}/>
       {catData && foodData ? (
         <main>
           {/* Cat Cards */}
@@ -82,8 +88,6 @@ export default function App() {
             );
           })}
           </section>  */}
-
-          <Button variant="outline">Button</Button>
         </main>
       ) : (
         <h1>Loading...</h1>

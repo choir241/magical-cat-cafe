@@ -10,7 +10,7 @@ export async function signupAccount({
   accountData,
 }: {
   accountData: IAccount;
-}) {
+}):Promise<void> {
   try {
     await account.create(
       ID.unique(),
