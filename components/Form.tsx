@@ -1,57 +1,59 @@
-import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Button } from "./ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "./ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-export function ProfileForm() {
+export function FormComponent({ onSubmit }: { onSubmit: ()=> Promise<void>}) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      name: "",
+      email: "",
+      password: "",
     },
   });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
-
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={onSubmit} className="space-y-8">
         <FormField
           control={form.control}
-          name="username"
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="email">Email</FormLabel>
+              <FormControl>
+                <Input placeholder="Your email" id="email" {...field} />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="name"
           render={({ field }) => (
             <FormItem>
               <FormLabel htmlFor="name">Name</FormLabel>
               <FormControl>
                 <Input placeholder="Your name" id="name" {...field} />
               </FormControl>
-              <FormLabel htmlFor="email">Email</FormLabel>
-              <FormControl>
-                <Input placeholder="Your email" id="email" {...field} />
-              </FormControl>
+            </FormItem>
+          )}
+        />
 
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
               <FormLabel htmlFor="password">Password</FormLabel>
               <FormControl>
                 <Input placeholder="Your password" id="password" {...field} />
@@ -59,6 +61,7 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -9,12 +9,12 @@ import CatCard from "../../components/CatCard";
 
 export default function Home() {
   const [catData, setCatData] = useState<ICatData[]>();
-  const [foodData, setFoodData] = useState<IFoodCategory[]>();
+  const [foodData, setFoodData] = useState<IFoodCategory>();
 
   useMemo(() => {
     getCatData({ setCatData: (catData: ICatData[]) => setCatData(catData) });
     getFoodData({
-      setFoodData: (foodData: IFoodCategory[]) => setFoodData(foodData),
+      setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
   }, []);
 
