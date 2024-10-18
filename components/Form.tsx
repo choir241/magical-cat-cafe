@@ -11,7 +11,7 @@ const formSchema = z.object({
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-export function FormComponent({ onSubmit }: { onSubmit: ()=> Promise<void>}) {
+export default function FormComponent({ onSubmit, buttonText, setName, setEmail, setPassword }: { onSubmit: ()=> Promise<void>, buttonText: string, setName: (e:string)=> void, setEmail: (e:string)=> void, setPassword: (e:string)=> void }) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,7 +30,7 @@ export function FormComponent({ onSubmit }: { onSubmit: ()=> Promise<void>}) {
             <FormItem>
               <FormLabel htmlFor="email">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Your email" id="email" {...field} />
+                <Input placeholder="Your email" id="email" />
               </FormControl>
             </FormItem>
           )}
@@ -62,7 +62,7 @@ export function FormComponent({ onSubmit }: { onSubmit: ()=> Promise<void>}) {
           )}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit">{buttonText}</Button>
       </form>
     </Form>
   );
