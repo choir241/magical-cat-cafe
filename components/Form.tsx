@@ -7,11 +7,23 @@ import { Input } from "./ui/input";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email address"),
+  email: z.string().min(1, "Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-export default function FormComponent({ onSubmit, buttonText, setName, setEmail, setPassword }: { onSubmit: ()=> Promise<void>, buttonText: string, setName: (e:string)=> void, setEmail: (e:string)=> void, setPassword: (e:string)=> void }) {
+export default function FormComponent({
+  onSubmit,
+  buttonText,
+  setName,
+  setEmail,
+  setPassword,
+}: {
+  onSubmit: () => Promise<void>;
+  buttonText: string;
+  setName: (e: string) => void;
+  setEmail: (e: string) => void;
+  setPassword: (e: string) => void;
+}) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -22,15 +34,15 @@ export default function FormComponent({ onSubmit, buttonText, setName, setEmail,
   });
   return (
     <Form {...form}>
-      <form onSubmit={onSubmit} className="space-y-8">
+      <form className="space-y-8">
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormLabel htmlFor="email">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Your email" id="email" />
+                <Input placeholder="Your email" id="email" onChange={(e)=>setEmail(e.target.value)} />
               </FormControl>
             </FormItem>
           )}
@@ -39,11 +51,11 @@ export default function FormComponent({ onSubmit, buttonText, setName, setEmail,
         <FormField
           control={form.control}
           name="name"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormLabel htmlFor="name">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" id="name" {...field} />
+                <Input placeholder="Your name" id="name" onChange={(e)=>setName(e.target.name)}/>
               </FormControl>
             </FormItem>
           )}
@@ -52,17 +64,29 @@ export default function FormComponent({ onSubmit, buttonText, setName, setEmail,
         <FormField
           control={form.control}
           name="name"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormLabel htmlFor="password">Password</FormLabel>
               <FormControl>
-                <Input placeholder="Your password" id="password" {...field} />
+                <Input
+                  placeholder="Your password"
+                  id="password"
+                  type="password"
+                  onChange={(e)=>setPassword(e.target.value)}
+                />
               </FormControl>
             </FormItem>
           )}
         />
 
-        <Button type="submit">{buttonText}</Button>
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            onSubmit();
+          }}
+        >
+          {buttonText}
+        </Button>
       </form>
     </Form>
   );
