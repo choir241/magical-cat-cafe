@@ -1,7 +1,11 @@
 import { databases, ID } from "./appwrite";
 import { IFoodData } from "../api/getData";
 
-export async function addToCart({ cartItem }: { cartItem: IFoodData }) {
+interface ICartData extends IFoodData {
+  userId: string;
+}
+
+export async function addToCart({ cartItem }: { cartItem: ICartData }) {
   try {
     await databases.createDocument(
       import.meta.env.VITE_DB_ID,
@@ -18,7 +22,7 @@ export async function editCart({
   cartItem,
   cartId,
 }: {
-  cartItem: IFoodData;
+  cartItem: ICartData;
   cartId: string;
 }) {
   try {

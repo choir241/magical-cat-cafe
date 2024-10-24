@@ -10,7 +10,7 @@ export async function signupAccount({
   accountData,
 }: {
   accountData: IAccount;
-}):Promise<void> {
+}): Promise<void> {
   try {
     await account.create(
       ID.unique(),
@@ -41,5 +41,14 @@ export async function logoutAccount() {
     await account.deleteSessions();
   } catch (error) {
     throw new Error(`There was an error logging out of your account, ${error}`);
+  }
+}
+
+export async function getAccount() {
+  try {
+    const data = await account.get();
+    console.log(data);
+  } catch (error) {
+    throw new Error(`There was a problem getting your account, ${error}`);
   }
 }
