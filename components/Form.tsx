@@ -42,24 +42,36 @@ export default function FormComponent({
             <FormItem>
               <FormLabel htmlFor="email">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Your email" id="email" onChange={(e)=>setEmail(e.target.value)} />
+                <Input
+                  placeholder="Your email"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </FormControl>
             </FormItem>
           )}
         />
 
-        <FormField
-          control={form.control}
-          name="name"
-          render={() => (
-            <FormItem>
-              <FormLabel htmlFor="name">Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Your name" id="name" onChange={(e)=>setName(e.target.name)}/>
-              </FormControl>
-            </FormItem>
-          )}
-        />
+        {buttonText === "Signup" ? (
+          <FormField
+            control={form.control}
+            name="name"
+            render={() => (
+              <FormItem>
+                <FormLabel htmlFor="name">Name</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Your name"
+                    id="name"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+        ) : (
+          <></>
+        )}
 
         <FormField
           control={form.control}
@@ -72,7 +84,7 @@ export default function FormComponent({
                   placeholder="Your password"
                   id="password"
                   type="password"
-                  onChange={(e)=>setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </FormControl>
             </FormItem>
