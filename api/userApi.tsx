@@ -6,6 +6,14 @@ interface IAccount {
   password: string;
 }
 
+export interface IUser {
+  $createdAt: string;
+  $id: string;
+  $updatedAt: string;
+  email: string;
+  name: string;
+}
+
 export async function signupAccount({
   accountData,
 }: {
@@ -44,10 +52,10 @@ export async function logoutAccount() {
   }
 }
 
-export async function getAccount() {
+export async function getAccount({ setUser }: { setUser: (e: IUser) => void }) {
   try {
     const data = await account.get();
-    console.log(data);
+    setUser(data);
   } catch (error) {
     throw new Error(`There was a problem getting your account, ${error}`);
   }
