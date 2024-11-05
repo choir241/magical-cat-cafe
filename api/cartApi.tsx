@@ -1,17 +1,16 @@
 import { databases, ID } from "./appwrite";
-import { IFoodData } from "../api/getData";
 
-interface ICartData extends IFoodData {
-  userId: string;
+interface ICartData{
+  cart: string[];
 }
 
-export async function addToCart({ cartItem }: { cartItem: ICartData }) {
+export async function addToCart({ cartItems }: { cartItems: ICartData }) {
   try {
     await databases.createDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_CART_COLLECTION,
       ID.unique(),
-      cartItem,
+      cartItems,
     );
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
@@ -19,10 +18,10 @@ export async function addToCart({ cartItem }: { cartItem: ICartData }) {
 }
 
 export async function editCart({
-  cartItem,
+  cartItems,
   cartId,
 }: {
-  cartItem: ICartData;
+  cartItems: ICartData;
   cartId: string;
 }) {
   try {
@@ -30,7 +29,7 @@ export async function editCart({
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_CART_COLLECTION,
       cartId,
-      cartItem,
+      cartItems,
     );
   } catch (error) {
     throw new Error(`There was an error editing your cart, ${error}`);
