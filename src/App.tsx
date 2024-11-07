@@ -1,4 +1,3 @@
-import "./App.css";
 import { Button } from "../components/ui/button";
 import FormComponent from "../components/Form";
 import { loginAccount, signupAccount } from "../api/userApi";
