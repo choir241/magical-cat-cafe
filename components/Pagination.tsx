@@ -15,8 +15,8 @@ export default function Pagination({
 }) {
   return (
     <div>
-      {Math.ceil(list.length / itemsPerPage) < currentPage + 1
-        ? Array.from(
+      {
+        Array.from(
             { length: Math.ceil(list.length / itemsPerPage) },
             (_, i) => (
               <Button
@@ -25,9 +25,8 @@ export default function Pagination({
               >
                 {i + 1}
               </Button>
-            )
-          )
-        }
+          ))
+      }
     </div>
   );
 }

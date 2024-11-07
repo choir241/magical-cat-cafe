@@ -44,19 +44,20 @@ export default function Menu(){
           <section className="flex w-full items-end flex-wrap">
 
 <div className="flex">
-
-          {foodData.mainDishes.map((food: IFoodData, i: number) => {
+          {foodData.mainDishes
+            .slice(firstIndex, lastIndex)
+            .map((food: IFoodData, i: number) => {
             return (
               <div key={`${food}-${i}`}>
                 <FoodCard foodData={food} />
               </div>
             );
-          }).splice(firstIndex, lastIndex)}
+          })}
           
           </div>
 
           </section>
-            <Pagination list={foodData.appetizers} itemsPerPage={itemsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} lastIndex={lastIndex}/>
+            <Pagination list={foodData.mainDishes} itemsPerPage={itemsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} lastIndex={lastIndex}/>
 
           {/* Drinks Cards */}
           {/* <section className="flex w-full items-end flex-wrap">
