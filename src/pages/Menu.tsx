@@ -28,8 +28,12 @@ export default function Menu() {
             <Button className="mr-10" onClick={() => setCategory("appetizers")}>
               Appetizers
             </Button>
-            <Button className="mr-10" onClick={() => setCategory("main")}>Main Dishes</Button>
-            <Button className="mr-10" onClick={() => setCategory("drinks")}>Drinks</Button>
+            <Button className="mr-10" onClick={() => setCategory("main")}>
+              Main Dishes
+            </Button>
+            <Button className="mr-10" onClick={() => setCategory("drinks")}>
+              Drinks
+            </Button>
             <Button onClick={() => setCategory("desserts")}>Desserts</Button>
           </section>
 
