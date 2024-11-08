@@ -1,6 +1,6 @@
 import { databases, ID } from "./appwrite";
 
-interface ICartData{
+interface ICartData {
   cart: string[];
 }
 

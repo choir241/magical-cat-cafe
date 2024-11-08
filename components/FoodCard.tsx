@@ -10,14 +10,17 @@ import { IFoodData } from "api/getData";
 import { Button } from "./ui/button";
 import { BsPlusCircleFill } from "react-icons/bs";
 
-export default function FoodCard({ foodData }: { foodData: IFoodData }) {
-
-  function addItemToCart(){
-
-  }
+export default function FoodCard({
+  foodData,
+  className,
+}: {
+  foodData: IFoodData;
+  className?: string;
+}) {
+  function addItemToCart() {}
 
   return (
-    <Card className="flex flex-col items-center w-4/5">
+    <Card className={`flex flex-col items-center w-[20rem] ${className}`}>
       <CardHeader>
         <CardTitle>
           {foodData.name} {foodData.price}
@@ -25,16 +28,16 @@ export default function FoodCard({ foodData }: { foodData: IFoodData }) {
         <CardDescription>{foodData.description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <img src={`../src/public${foodData.gallery}`} className="w-4/5"/>
+        <img src={`../src/public${foodData.gallery}`} />
       </CardContent>
       <CardFooter>
-      <Button
+        <Button
           onClick={(e) => {
             e.preventDefault();
             addItemToCart();
           }}
         >
-          <BsPlusCircleFill/>
+          <BsPlusCircleFill />
         </Button>
       </CardFooter>
     </Card>
