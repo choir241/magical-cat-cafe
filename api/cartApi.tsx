@@ -1,10 +1,6 @@
 import { databases, ID } from "./appwrite";
 
-interface ICartData {
-  cart: string[];
-}
-
-export async function addToCart({ cartItems }: { cartItems: ICartData }) {
+export async function addToCart({ cartItems }: { cartItems: string }) {
   try {
     await databases.createDocument(
       import.meta.env.VITE_DB_ID,
@@ -21,7 +17,7 @@ export async function editCart({
   cartItems,
   cartId,
 }: {
-  cartItems: ICartData;
+  cartItems: string;
   cartId: string;
 }) {
   try {

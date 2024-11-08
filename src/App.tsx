@@ -8,7 +8,7 @@ export default function App() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [user, setUser] = useState<IUser>();
+  const [user, setUser] = useState<IUser | null>(null);
   const [buttonToggle, setButtonToggle] = useState<boolean>(false);
 
   useMemo(() => {
