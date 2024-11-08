@@ -17,7 +17,7 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/menu" element={<Menu/>} />
+          <Route path="/menu" element={<Menu />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  getCatData,
-  ICatData,
-} from "../../api/getData";
+import { getCatData, ICatData } from "../../api/getData";
 import CatCard from "../../components/CatCard";
 
 export default function Profile() {
@@ -26,8 +23,6 @@ export default function Profile() {
             );
           })}
           </section> */}
-
-        
         </main>
       ) : (
         <h1>Loading...</h1>
