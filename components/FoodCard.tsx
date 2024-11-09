@@ -78,12 +78,12 @@ export default function FoodCard({
         [user.$id]: {
           name: foodData.name,
           price: foodData.price,
-          description: foodData.description,
           gallery: foodData.gallery,
+          quantity: 0
         },
       };
 
-      addToCart({ cartItems: JSON.stringify(data) });
+      addToCart({ cartItems: data });
 
       return;
     }
@@ -94,13 +94,14 @@ export default function FoodCard({
       [guestId]: {
         name: foodData.name,
         price: foodData.price,
-        description: foodData.description,
         gallery: foodData.gallery,
+        quantity: 0
       },
     };
 
-    addToCart({ cartItems: JSON.stringify(data) });
+    addToCart({ cartItems: data });
   }
+
 
   return (
     <Card className={`flex flex-col items-center w-[20rem] ${className}`}>
