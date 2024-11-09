@@ -1,14 +1,21 @@
 import { databases, ID } from "./appwrite";
 
-export async function addToCart({ cartItems }: { cartItems: string }) {
+interface ICartItem {
+  [x: string]: {
+    name: string;
+    price: number;
+    gallery: string;
+};
+}
+
+export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
   try {
-    const test = await databases.createDocument(
+    await databases.createDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_CART_COLLECTION,
       ID.unique(),
-      JSON.stringify(cartItems),
+      {cartItems: JSON.stringify(cartItems)},
     );
-    console.log(test);
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
   }
@@ -33,7 +40,7 @@ export async function editCart({
   }
 }
 
-export async function DeleteCart({ cartId }: { cartId: string }) {
+export async function deleteCart({ cartId }: { cartId: string }) {
   try {
     await databases.deleteDocument(
       import.meta.env.VITE_DB_ID,
@@ -41,6 +48,29 @@ export async function DeleteCart({ cartId }: { cartId: string }) {
       cartId,
     );
   } catch (error) {
-    throw new Error(`${error}`);
+    throw new Error(`Error deleting your cart, ${error}`);
+  }
+}
+
+export interface ICartData {
+  cartItems: string
+  $collectionId?: string
+  $createdAt?: string
+  $databaseId?: string
+  $id?: string
+  $permissions?: string
+  $updatedAt?: string
+}
+
+export async function getCart({setCartData}:{setCartData: (e:ICartData[])=>void}){
+  try {
+      const {documents} = await databases.listDocuments(
+        import.meta.env.VITE_DB_ID,
+        import.meta.env.VITE_CART_COLLECTION,
+      );
+
+      setCartData(documents as unknown as ICartData[])
+  }catch(error) {
+    throw new Error(`Error getting your cart, ${error}`)
   }
 }

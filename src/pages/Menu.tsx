@@ -4,11 +4,13 @@ import FoodCard from "../../components/FoodCard";
 import Pagination from "../../components/Pagination";
 import { Button } from "../../components/ui/button";
 import Nav from "../../components/Nav";
+import { getCart, ICartData } from "../../api/cartApi";
 
 export default function Menu() {
-  const [foodData, setFoodData] = useState<IFoodCategory>();
+  const [foodData, setFoodData] = useState<IFoodCategory | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [category, setCategory] = useState("appetizers");
+  const [cartData, setCartData] = useState<ICartData[] | Document[]>([]);
 
   const itemsPerPage = 6;
 
@@ -19,7 +21,13 @@ export default function Menu() {
     getFoodData({
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
+
+    getCart({
+      setCartData: (cartData: ICartData[]) => setCartData(cartData)
+    })
   }, []);
+
+  console.log(cartData);
 
   return (
     <>
