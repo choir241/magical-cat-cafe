@@ -15,7 +15,7 @@ export default function Nav() {
           <NavigationMenuLink>
             <Button variant="link">
               <a href="/cart" className="hover:opacity-70">
-                <FaCartShopping  />
+                <FaCartShopping />
               </a>
             </Button>
           </NavigationMenuLink>

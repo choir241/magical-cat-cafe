@@ -28,6 +28,8 @@
     "components/lib",
     "api",
     "components/ui/form.tsx",
-    "components/ui/label.tsx"
-, "components/ui/navigation-menu.tsx", "components/Nav.tsx"  ]
+    "components/ui/label.tsx",
+    "components/ui/navigation-menu.tsx",
+    "components/Nav.tsx"
+  ]
 }

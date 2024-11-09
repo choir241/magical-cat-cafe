@@ -25,7 +25,7 @@ export default function Menu() {
     <>
       {foodData ? (
         <main className="w-full">
-          <Nav/>
+          <Nav />
 
           <section className="flex justify-center items-center mt-8">
             <Button className="mr-10" onClick={() => setCategory("appetizers")}>

@@ -2,12 +2,13 @@ import { databases, ID } from "./appwrite";
 
 export async function addToCart({ cartItems }: { cartItems: string }) {
   try {
-    await databases.createDocument(
+    const test = await databases.createDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_CART_COLLECTION,
       ID.unique(),
-      cartItems,
+      JSON.stringify(cartItems),
     );
+    console.log(test);
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
   }
