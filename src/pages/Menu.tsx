@@ -3,6 +3,7 @@ import { getFoodData, IFoodCategory, IFoodData } from "../../api/getData";
 import FoodCard from "../../components/FoodCard";
 import Pagination from "../../components/Pagination";
 import { Button } from "../../components/ui/button";
+import Nav from "../../components/Nav";
 
 export default function Menu() {
   const [foodData, setFoodData] = useState<IFoodCategory>();
@@ -24,6 +25,8 @@ export default function Menu() {
     <>
       {foodData ? (
         <main className="w-full">
+          <Nav />
+
           <section className="flex justify-center items-center mt-8">
             <Button className="mr-10" onClick={() => setCategory("appetizers")}>
               Appetizers
