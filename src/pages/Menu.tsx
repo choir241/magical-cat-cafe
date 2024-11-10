@@ -45,7 +45,7 @@ export default function Menu() {
     getFoodData({
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
-  }, []); // Run only once on mount
+  }, []);
 
   return (
     <>

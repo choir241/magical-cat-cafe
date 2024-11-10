@@ -39,6 +39,8 @@ export async function loginAccount({ accountData }: { accountData: IAccount }) {
       accountData.email,
       accountData.password,
     );
+
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error logging into your account, ${error}`);
   }

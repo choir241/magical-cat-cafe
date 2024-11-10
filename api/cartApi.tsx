@@ -10,6 +10,16 @@ interface ICartItem {
   [x: string]: ICartDB[];
 }
 
+export interface ICartData {
+  cartItems: string;
+  $collectionId?: string;
+  $createdAt?: string;
+  $databaseId?: string;
+  $id?: string;
+  $permissions?: string;
+  $updatedAt?: string;
+}
+
 export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
   try {
     await databases.createDocument(
@@ -52,16 +62,6 @@ export async function deleteCart({ cartId }: { cartId: string }) {
   } catch (error) {
     throw new Error(`Error deleting your cart, ${error}`);
   }
-}
-
-export interface ICartData {
-  cartItems: string;
-  $collectionId?: string;
-  $createdAt?: string;
-  $databaseId?: string;
-  $id?: string;
-  $permissions?: string;
-  $updatedAt?: string;
 }
 
 export async function getCart({
