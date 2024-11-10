@@ -75,12 +75,14 @@ export default function FoodCard({
   function addItemToCart() {
     if (user) {
       const data = {
-        [user.$id]: [{
-          name: foodData.name,
-          price: foodData.price,
-          gallery: foodData.gallery,
-          quantity: 0
-        }],
+        [user.$id]: [
+          {
+            name: foodData.name,
+            price: foodData.price,
+            gallery: foodData.gallery,
+            quantity: 0,
+          },
+        ],
       };
 
       addToCart({ cartItems: data });
@@ -91,19 +93,20 @@ export default function FoodCard({
     const guestId = guestIdGenerator();
 
     const data = {
-      [guestId]: [{
-        name: foodData.name,
-        price: foodData.price,
-        gallery: foodData.gallery,
-        quantity: 0
-      }],
+      [guestId]: [
+        {
+          name: foodData.name,
+          price: foodData.price,
+          gallery: foodData.gallery,
+          quantity: 0,
+        },
+      ],
     };
 
     sessionStorage.setItem("guestId", guestId);
 
     addToCart({ cartItems: data });
   }
-
 
   return (
     <Card className={`flex flex-col items-center w-[20rem] ${className}`}>

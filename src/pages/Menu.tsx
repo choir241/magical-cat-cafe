@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { getFoodData, IFoodCategory, IFoodData } from "../../api/getData";
 import FoodCard from "../../components/FoodCard";
 import Pagination from "../../components/Pagination";
@@ -20,36 +20,32 @@ export default function Menu() {
   const firstIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = firstIndex + itemsPerPage;
 
-  const id = useMemo(()=>{
-    return user ? user.$id : (sessionStorage.getItem("guestId") as string);
-  }, [user]);
+  const cartCount = useMemo(() => {
+    if (!cartData.length) return 0;
 
-  const getNumOfCartItems = useCallback(() => {
-    if(!cartData.length){
-      setNumOfCart(0);
-      return;
-    }
-
+    const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
     const findCart = cartData.find((data: ICartData) => {
       return JSON.parse(data.cartItems)[id];
     });
 
-    setNumOfCart(findCart ? JSON.parse(findCart.cartItems)[id].length : 0);
-  }, [cartData, id]);
+    return findCart ? JSON.parse(findCart.cartItems)[id].length : 0;
+  }, [cartData, user]);
 
   useEffect(() => {
-    getFoodData({
-      setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
-    });
+    setNumOfCart(cartCount);
+  }, [cartCount]);
 
+  useEffect(() => {
     getCart({
       setCartData: (cartData: ICartData[]) => setCartData(cartData),
     });
 
     getAccount({ setUser: (e) => setUser(e) });
 
-    getNumOfCartItems();
-  }, [cartData, id]);
+    getFoodData({
+      setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
+    });
+  }, []); // Run only once on mount
 
   return (
     <>

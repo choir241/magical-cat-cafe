@@ -1,9 +1,9 @@
 import { databases, ID } from "./appwrite";
 
 interface ICartDB {
-    name: string;
-    price: number;
-    gallery: string;
+  name: string;
+  price: number;
+  gallery: string;
 }
 
 interface ICartItem {
@@ -16,7 +16,7 @@ export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_CART_COLLECTION,
       ID.unique(),
-      {cartItems: JSON.stringify(cartItems)},
+      { cartItems: JSON.stringify(cartItems) },
     );
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
@@ -55,24 +55,28 @@ export async function deleteCart({ cartId }: { cartId: string }) {
 }
 
 export interface ICartData {
-  cartItems: string
-  $collectionId?: string
-  $createdAt?: string
-  $databaseId?: string
-  $id?: string
-  $permissions?: string
-  $updatedAt?: string
+  cartItems: string;
+  $collectionId?: string;
+  $createdAt?: string;
+  $databaseId?: string;
+  $id?: string;
+  $permissions?: string;
+  $updatedAt?: string;
 }
 
-export async function getCart({setCartData}:{setCartData: (e:ICartData[])=>void}){
+export async function getCart({
+  setCartData,
+}: {
+  setCartData: (e: ICartData[]) => void;
+}) {
   try {
-      const {documents} = await databases.listDocuments(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_CART_COLLECTION,
-      );
+    const { documents } = await databases.listDocuments(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_CART_COLLECTION,
+    );
 
-      setCartData(documents as unknown as ICartData[])
-  }catch(error) {
-    throw new Error(`Error getting your cart, ${error}`)
+    setCartData(documents as unknown as ICartData[]);
+  } catch (error) {
+    throw new Error(`Error getting your cart, ${error}`);
   }
 }
