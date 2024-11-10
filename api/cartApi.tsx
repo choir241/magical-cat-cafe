@@ -1,11 +1,13 @@
 import { databases, ID } from "./appwrite";
 
-interface ICartItem {
-  [x: string]: {
+interface ICartDB {
     name: string;
     price: number;
     gallery: string;
-};
+}
+
+interface ICartItem {
+  [x: string]: ICartDB[];
 }
 
 export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
