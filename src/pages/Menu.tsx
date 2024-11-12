@@ -4,7 +4,7 @@ import FoodCard from "../../components/FoodCard";
 import Pagination from "../../components/Pagination";
 import { Button } from "../../components/ui/button";
 import Nav from "../../components/Nav";
-import { getCart, ICartData } from "../../api/cartApi";
+import { getCart, ICartData, ICartItem } from "../../api/cartApi";
 import { IUser, getAccount } from "../../api/userApi";
 
 export default function Menu() {
@@ -13,27 +13,27 @@ export default function Menu() {
   const [category, setCategory] = useState("appetizers");
   const [cartData, setCartData] = useState<ICartData[]>([]);
   const [user, setUser] = useState<IUser | null>(null);
-  const [numOfCart, setNumOfCart] = useState<number>(0);
+  const [usersCart, setUsersCart] = useState<ICartItem[] | null>(null);
 
   const itemsPerPage = 6;
 
   const firstIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = firstIndex + itemsPerPage;
 
-  const cartCount = useMemo(() => {
-    if (!cartData.length) return 0;
+  const cartItems = useMemo(() => {
+    if (!cartData.length) return [];
 
     const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
     const findCart = cartData.find((data: ICartData) => {
       return JSON.parse(data.cartItems)[id];
     });
 
-    return findCart ? JSON.parse(findCart.cartItems)[id].length : 0;
+    return findCart ? JSON.parse(findCart.cartItems)[id] : {};
   }, [cartData, user]);
 
   useEffect(() => {
-    setNumOfCart(cartCount);
-  }, [cartCount]);
+    setUsersCart(cartItems);
+  }, [cartItems]);
 
   useEffect(() => {
     getCart({
@@ -49,9 +49,9 @@ export default function Menu() {
 
   return (
     <>
-      {foodData ? (
+      {foodData && usersCart ? (
         <main className="w-full">
-          <Nav numOfCartItems={numOfCart} />
+          <Nav numOfCartItems={usersCart.length} />
 
           <section className="flex justify-center items-center mt-8">
             <Button className="mr-10" onClick={() => setCategory("appetizers")}>

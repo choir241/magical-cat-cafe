@@ -1,12 +1,13 @@
 import { databases, ID } from "./appwrite";
 
-interface ICartDB {
+export interface ICartDB {
   name: string;
   price: number;
   gallery: string;
+  quantity: number;
 }
 
-interface ICartItem {
+export interface ICartItem {
   [x: string]: ICartDB[];
 }
 
@@ -28,6 +29,8 @@ export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
       ID.unique(),
       { cartItems: JSON.stringify(cartItems) },
     );
+
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
   }
@@ -37,7 +40,7 @@ export async function editCart({
   cartItems,
   cartId,
 }: {
-  cartItems: string;
+  cartItems: ICartItem;
   cartId: string;
 }) {
   try {

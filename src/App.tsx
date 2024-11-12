@@ -3,7 +3,7 @@ import FormComponent from "../components/Form";
 import { loginAccount, signupAccount } from "../api/userApi";
 import { useState, useMemo } from "react";
 import { getAccount, IUser } from "../api/userApi";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default function App() {
   const [name, setName] = useState<string>("");
@@ -12,8 +12,6 @@ export default function App() {
   const [user, setUser] = useState<IUser | null>(null);
   const [buttonToggle, setButtonToggle] = useState<boolean>(false);
 
-  const navigate = useNavigate();
-
   useMemo(() => {
     getAccount({ setUser: (e) => setUser(e) });
   }, []);
@@ -21,11 +19,26 @@ export default function App() {
   return (
     <>
       {user ? (
-        navigate("/menu")
+        <Navigate to ="/menu" replace/>
       ) : (
         <>
           {buttonToggle ? (
-            <main>
+              <main>
+                <FormComponent
+                  buttonText="Signup"
+                  onSubmit={() =>
+                    signupAccount({ accountData: { name, email, password } })
+                  }
+                  setName={(e) => setName(e)}
+                  setEmail={(e) => setEmail(e)}
+                  setPassword={(e) => setPassword(e)}
+                />
+                <span>Already have an account?</span>
+                <Button onClick={() => setButtonToggle(true)}>Login</Button>
+              </main>
+          )
+            :
+            (<main>
               <FormComponent
                 buttonText="Login"
                 onSubmit={() =>
@@ -39,21 +52,7 @@ export default function App() {
               <span>Don't have an account?</span>
               <Button onClick={() => setButtonToggle(false)}>Signup</Button>
             </main>
-          ) : (
-            <main>
-              <FormComponent
-                buttonText="Signup"
-                onSubmit={() =>
-                  signupAccount({ accountData: { name, email, password } })
-                }
-                setName={(e) => setName(e)}
-                setEmail={(e) => setEmail(e)}
-                setPassword={(e) => setPassword(e)}
-              />
-              <span>Already have an account?</span>
-              <Button onClick={() => setButtonToggle(true)}>Login</Button>
-            </main>
-          )}
+          ) }
         </>
       )}
     </>

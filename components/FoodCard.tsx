@@ -9,7 +9,7 @@ import {
 import { IFoodData } from "api/getData";
 import { Button } from "./ui/button";
 import { BsPlusCircleFill } from "react-icons/bs";
-import { addToCart } from "../api/cartApi";
+import { addToCart, ICartData, editCart } from "../api/cartApi";
 import { useState, useMemo } from "react";
 import { getAccount, IUser } from "../api/userApi";
 
@@ -21,10 +21,24 @@ export default function FoodCard({
   className?: string;
 }) {
   const [user, setUser] = useState<IUser | null>(null);
+  const [cartData, setCartData] = useState<ICartData[]>([]);
 
   useMemo(() => {
     getAccount({ setUser: (e) => setUser(e) });
   }, []);
+
+  const cartItems = useMemo(() => {
+    if (!cartData.length) return [];
+
+    const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
+    const findCart = cartData.find((data: ICartData) => {
+      return JSON.parse(data.cartItems)[id];
+    });
+
+    if (findCart) {
+      return JSON.parse(findCart.cartItems)[id];
+    }
+  }, [cartData, user]);
 
   function guestIdGenerator() {
     const alphabet = [
@@ -80,32 +94,42 @@ export default function FoodCard({
             name: foodData.name,
             price: foodData.price,
             gallery: foodData.gallery,
-            quantity: 0,
+            quantity: 1,
           },
         ],
       };
 
-      addToCart({ cartItems: data });
+      console.log(cartItems)
 
-      return;
+      if(cartItems.length){
+        console.log(cartData)
+
+        // editCart({ cartItems: editedData, cartId: ""});
+
+        return;
+      }
+
+      // addToCart({ cartItems: data });
+
+      // return;
     }
 
-    const guestId = guestIdGenerator();
+    // const guestId = guestIdGenerator();
 
-    const data = {
-      [guestId]: [
-        {
-          name: foodData.name,
-          price: foodData.price,
-          gallery: foodData.gallery,
-          quantity: 0,
-        },
-      ],
-    };
+    // const data = {
+    //   [guestId]: [
+    //     {
+    //       name: foodData.name,
+    //       price: foodData.price,
+    //       gallery: foodData.gallery,
+    //       quantity: 1,
+    //     },
+    //   ],
+    // };
 
-    sessionStorage.setItem("guestId", guestId);
+    // sessionStorage.setItem("guestId", guestId);
 
-    addToCart({ cartItems: data });
+    // addToCart({ cartItems: data });
   }
 
   return (
