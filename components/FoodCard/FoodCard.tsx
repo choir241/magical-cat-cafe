@@ -5,13 +5,18 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "../ui/card";
 import { IFoodData } from "api/getData";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { BsPlusCircleFill } from "react-icons/bs";
+<<<<<<< Updated upstream:components/FoodCard.tsx
 import { addToCart } from "../api/cartApi";
+=======
+import { getCart, addToCart, ICartData } from "../../api/cartApi";
+>>>>>>> Stashed changes:components/FoodCard/FoodCard.tsx
 import { useState, useMemo } from "react";
-import { getAccount, IUser } from "../api/userApi";
+import { getAccount, IUser } from "../../api/userApi";
+import {guestIdGenerator} from "../FoodCard/guestIdGenerator"
 
 export default function FoodCard({
   foodData,
@@ -24,8 +29,11 @@ export default function FoodCard({
 
   useMemo(() => {
     getAccount({ setUser: (e) => setUser(e) });
+
+    getCart(({setCartData: (e) => setCartData(e)}))
   }, []);
 
+<<<<<<< Updated upstream:components/FoodCard.tsx
   function guestIdGenerator() {
     const alphabet = [
       "a",
@@ -71,6 +79,20 @@ export default function FoodCard({
 
     return guestId;
   }
+=======
+  const cartItems = useMemo(() => {
+    if (!cartData.length) return [];
+
+    const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
+    const findCart = cartData.find((data: ICartData) => {
+      return JSON.parse(data.cartItems)[id];
+    });
+
+    if (findCart) {
+      return JSON.parse(findCart.cartItems)[id];
+    }
+  }, [cartData, user]);
+>>>>>>> Stashed changes:components/FoodCard/FoodCard.tsx
 
   function addItemToCart() {
     if (user) {
@@ -83,6 +105,19 @@ export default function FoodCard({
         },
       };
 
+<<<<<<< Updated upstream:components/FoodCard.tsx
+=======
+      if(cartItems.length){
+
+        cartItems[user.$id].push(data[user.$id]);
+
+
+        console.log(cartItems)
+
+        return;
+      }
+
+>>>>>>> Stashed changes:components/FoodCard/FoodCard.tsx
       addToCart({ cartItems: data });
 
       return;
@@ -91,6 +126,7 @@ export default function FoodCard({
     const guestId = guestIdGenerator();
 
     const data = {
+<<<<<<< Updated upstream:components/FoodCard.tsx
       [guestId]: {
         name: foodData.name,
         price: foodData.price,
@@ -99,6 +135,20 @@ export default function FoodCard({
       },
     };
 
+=======
+      [guestId]: [
+        {
+          name: foodData.name,
+          price: foodData.price,
+          gallery: foodData.gallery,
+          quantity: 1,
+        },
+      ],
+    };
+
+    sessionStorage.setItem("guestId", guestId);
+
+>>>>>>> Stashed changes:components/FoodCard/FoodCard.tsx
     addToCart({ cartItems: data });
   }
 

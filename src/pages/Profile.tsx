@@ -14,7 +14,7 @@ export default function Profile() {
       {catData ? (
         <main>
           {/* Cat Cards */}
-          {/* <section>
+          <section>
           {catData.map((cat: ICatData, i: number) => {
             return (
               <div key={`${cat.breed}-${i}`}>
@@ -22,7 +22,7 @@ export default function Profile() {
               </div>
             );
           })}
-          </section> */}
+          </section>
         </main>
       ) : (
         <h1>Loading...</h1>

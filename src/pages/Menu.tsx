@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getFoodData, IFoodCategory, IFoodData } from "../../api/getData";
-import FoodCard from "../../components/FoodCard";
+import FoodCard from "../../components/FoodCard/FoodCard";
 import Pagination from "../../components/Pagination";
 import { Button } from "../../components/ui/button";
 import Nav from "../../components/Nav";

@@ -1,11 +1,10 @@
 import { databases, ID } from "./appwrite";
 
-interface ICartItem {
-  [x: string]: {
-    name: string;
-    price: number;
-    gallery: string;
-};
+export interface ICartDB {
+  name: string;
+  price: number;
+  gallery: string;
+  quantity: number;
 }
 
 export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
@@ -14,8 +13,10 @@ export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_CART_COLLECTION,
       ID.unique(),
-      {cartItems: JSON.stringify(cartItems)},
+      { cartItems: JSON.stringify(cartItems) },
     );
+
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
   }
@@ -29,12 +30,9 @@ export async function editCart({
   cartId: string;
 }) {
   try {
-    await databases.updateDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_CART_COLLECTION,
-      cartId,
-      cartItems,
-    );
+    console.log(cartItems);
+    console.log(cartId);
+
   } catch (error) {
     throw new Error(`There was an error editing your cart, ${error}`);
   }
@@ -42,11 +40,8 @@ export async function editCart({
 
 export async function deleteCart({ cartId }: { cartId: string }) {
   try {
-    await databases.deleteDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_CART_COLLECTION,
-      cartId,
-    );
+
+    console.log(cartId);
   } catch (error) {
     throw new Error(`Error deleting your cart, ${error}`);
   }
@@ -64,13 +59,13 @@ export interface ICartData {
 
 export async function getCart({setCartData}:{setCartData: (e:ICartData[])=>void}){
   try {
-      const {documents} = await databases.listDocuments(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_CART_COLLECTION,
-      );
+    const { documents } = await databases.listDocuments(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_CART_COLLECTION,
+    );
 
-      setCartData(documents as unknown as ICartData[])
-  }catch(error) {
-    throw new Error(`Error getting your cart, ${error}`)
+    setCartData(documents as unknown as ICartData[]);
+  } catch (error) {
+    throw new Error(`Error getting your cart, ${error}`);
   }
 }

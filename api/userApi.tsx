@@ -1,5 +1,3 @@
-import { account, ID } from "./appwrite";
-
 interface IAccount {
   name: string;
   email: string;
@@ -20,12 +18,6 @@ export async function signupAccount({
   accountData: IAccount;
 }): Promise<void> {
   try {
-    await account.create(
-      ID.unique(),
-      accountData.email,
-      accountData.password,
-      accountData.name,
-    );
 
     loginAccount({ accountData });
   } catch (error) {
@@ -39,6 +31,9 @@ export async function loginAccount({ accountData }: { accountData: IAccount }) {
       accountData.email,
       accountData.password,
     );
+
+    sessionStorage.clear();
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error logging into your account, ${error}`);
   }
@@ -47,6 +42,7 @@ export async function loginAccount({ accountData }: { accountData: IAccount }) {
 export async function logoutAccount() {
   try {
     await account.deleteSessions();
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error logging out of your account, ${error}`);
   }
@@ -54,8 +50,7 @@ export async function logoutAccount() {
 
 export async function getAccount({ setUser }: { setUser: (e: IUser) => void }) {
   try {
-    const data = await account.get();
-    setUser(data);
+    setUser({$createdAt: "", $id: "", $updatedAt: "", email: "", name: ""});
   } catch (error) {
     throw new Error(`There was a problem getting your account, ${error}`);
   }
