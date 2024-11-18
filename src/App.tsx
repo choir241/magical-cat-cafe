@@ -3,6 +3,8 @@ import FormComponent from "../components/Form";
 import { loginAccount, signupAccount } from "../api/userApi";
 import { useState, useMemo } from "react";
 import { getAccount, IUser } from "../api/userApi";
+import { database} from "../api/firebase";
+import { getDocs, collection } from 'firebase/firestore/lite';
 
 export default function App() {
   const [name, setName] = useState<string>("");
@@ -14,6 +16,15 @@ export default function App() {
   useMemo(() => {
     getAccount({ setUser: (e) => setUser(e) });
   }, []);
+
+  async function getData(){
+    const data = collection(database, "users");
+    const test = await getDocs(data);
+    console.log(test);
+  }
+
+  getData();
+  
 
   return (
     <>
