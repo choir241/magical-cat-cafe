@@ -1,3 +1,8 @@
+import { database} from "../api/firebase";
+import { getDatabase, ref, set } from "firebase/database";
+import { getDocs, collection } from 'firebase/firestore/lite';
+import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore/lite";
+
 export interface ICartDB {
   name: string;
   price: number;
@@ -19,9 +24,13 @@ export interface ICartData {
   $updatedAt?: string;
 }
 
-export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
+export async function addToCart() {
   try {
-    console.log(cartItems);
+    const db = getDatabase();
+    set(ref(db, 'users/'), {
+      name: "su-metal"
+    });
+
     window.location.reload();
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
@@ -51,13 +60,17 @@ export async function deleteCart({ cartId }: { cartId: string }) {
   }
 }
 
-export async function getCart({
+export async function getCart(
+  {
   setCartData,
 }: {
-  setCartData: (e: ICartData[]) => void;
-}) {
+  setCartData: (e: QueryDocumentSnapshot<DocumentData, DocumentData>[]) => void;
+}
+) {
   try {
-    setCartData([]);
+    const userCollection = collection(database, "users");
+    const data = await getDocs(userCollection);
+    setCartData(data.docs);
   } catch (error) {
     throw new Error(`Error getting your cart, ${error}`);
   }

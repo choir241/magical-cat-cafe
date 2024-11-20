@@ -1,10 +1,9 @@
 import { Button } from "../components/ui/button";
 import FormComponent from "../components/Form";
-import { loginAccount, signupAccount } from "../api/userApi";
+import { loginAccount, signupAccount, getAccount, IUser } from "../api/userApi";
 import { useState, useMemo } from "react";
-import { getAccount, IUser } from "../api/userApi";
-import { database} from "../api/firebase";
-import { getDocs, collection } from 'firebase/firestore/lite';
+import { getCart, addToCart } from "../api/cartApi";
+import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore/lite";
 
 export default function App() {
   const [name, setName] = useState<string>("");
@@ -12,24 +11,23 @@ export default function App() {
   const [password, setPassword] = useState<string>("");
   const [user, setUser] = useState<IUser | null>(null);
   const [buttonToggle, setButtonToggle] = useState<boolean>(false);
+  const [cart, setCart] = useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>();
 
   useMemo(() => {
     getAccount({ setUser: (e) => setUser(e) });
   }, []);
 
-  async function getData(){
-    const data = collection(database, "users");
-    const test = await getDocs(data);
-    console.log(test);
-  }
-
-  getData();
-  
+  // getCart({ setCartData: (e) => setCart(e) });  
 
   return (
     <>
       {buttonToggle ? (
         <main>
+          <button onClick={(e)=>{
+            e.preventDefault();
+            addToCart();
+          }}>Test</button>
+
           <FormComponent
             buttonText="Login"
             onSubmit={() =>
