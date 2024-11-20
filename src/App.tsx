@@ -16,9 +16,9 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <div className="bg-[#383151] min-h-screen">
       {buttonToggle ? (
-        <main>
+        <main className="flex flex-col items-center">
           <FormComponent
             buttonText="Login"
             onSubmit={() =>
@@ -29,11 +29,15 @@ export default function App() {
             setPassword={(e) => setPassword(e)}
           />
 
-          <span>Don't have an account?</span>
-          <Button onClick={() => setButtonToggle(false)}>Signup</Button>
+          <div className="flex items-center mt-4">
+            <span>Don't have an account?</span>
+            <Button variant={"link"} onClick={() => setButtonToggle(false)}>
+              Signup
+            </Button>
+          </div>
         </main>
       ) : (
-        <main>
+        <main className="flex flex-col items-center">
           <FormComponent
             buttonText="Signup"
             onSubmit={() =>
@@ -43,10 +47,15 @@ export default function App() {
             setEmail={(e) => setEmail(e)}
             setPassword={(e) => setPassword(e)}
           />
-          <span>Already have an account?</span>
-          <Button onClick={() => setButtonToggle(true)}>Login</Button>
+
+          <div className="flex items-center mt-4">
+            <span>Already have an account?</span>
+            <Button variant={"link"} onClick={() => setButtonToggle(true)}>
+              Login
+            </Button>
+          </div>
         </main>
       )}
-    </>
+    </div>
   );
 }
