@@ -34,17 +34,19 @@ export default function FormComponent({
   });
   return (
     <Form {...form}>
-      <form className="space-y-8">
+      <form className="pt-8 space-y-8 flex flex-col items-center w-full">
         <FormField
           control={form.control}
           name="email"
           render={() => (
-            <FormItem>
-              <FormLabel htmlFor="email">Email</FormLabel>
-              <FormControl>
+            <FormItem className="w-1/4">
+              <FormLabel htmlFor="email" className="text-xl">Email</FormLabel>
+              <FormControl className="w-full">
                 <Input
                   placeholder="Your email"
+                  className="text-xl"
                   id="email"
+                  type="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </FormControl>
@@ -57,10 +59,11 @@ export default function FormComponent({
             control={form.control}
             name="name"
             render={() => (
-              <FormItem>
-                <FormLabel htmlFor="name">Name</FormLabel>
-                <FormControl>
-                  <Input
+              <FormItem className="w-1/4">
+                <FormLabel htmlFor="name" className="text-xl">Name</FormLabel>
+                <FormControl className="w-full">
+                <Input
+                    className="text-xl"
                     placeholder="Your name"
                     id="name"
                     onChange={(e) => setName(e.target.value)}
@@ -77,9 +80,9 @@ export default function FormComponent({
           control={form.control}
           name="name"
           render={() => (
-            <FormItem>
-              <FormLabel htmlFor="password">Password</FormLabel>
-              <FormControl>
+            <FormItem className="w-1/4">
+              <FormLabel htmlFor="password" className="text-xl">Password</FormLabel>
+              <FormControl className="w-full text-xl">
                 <Input
                   placeholder="Your password"
                   id="password"
@@ -92,6 +95,7 @@ export default function FormComponent({
         />
 
         <Button
+          className="textColor bg-[#301812] text-xl"
           onClick={(e) => {
             e.preventDefault();
             onSubmit();
