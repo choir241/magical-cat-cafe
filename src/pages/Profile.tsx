@@ -10,7 +10,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <>
+    <div className="bg-[#383151] min-h-screen">
       {catData ? (
         <main>
           {/* Cat Cards */}
@@ -27,6 +27,6 @@ export default function Profile() {
       ) : (
         <h1>Loading...</h1>
       )}
-    </>
+    </div>
   );
 }

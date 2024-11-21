@@ -36,15 +36,15 @@ export default function FormComponent({
     <Form {...form}>
       <form className="pt-8 space-y-8 flex flex-col items-center w-full">
         <FormField
-          
           control={form.control}
           name="email"
           render={() => (
             <FormItem className="w-1/4">
-              <FormLabel htmlFor="email">Email</FormLabel>
+              <FormLabel htmlFor="email" className="text-xl">Email</FormLabel>
               <FormControl className="w-full">
                 <Input
                   placeholder="Your email"
+                  className="text-xl"
                   id="email"
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -60,9 +60,10 @@ export default function FormComponent({
             name="name"
             render={() => (
               <FormItem className="w-1/4">
-                <FormLabel htmlFor="name">Name</FormLabel>
+                <FormLabel htmlFor="name" className="text-xl">Name</FormLabel>
                 <FormControl className="w-full">
                 <Input
+                    className="text-xl"
                     placeholder="Your name"
                     id="name"
                     onChange={(e) => setName(e.target.value)}
@@ -80,8 +81,8 @@ export default function FormComponent({
           name="name"
           render={() => (
             <FormItem className="w-1/4">
-              <FormLabel htmlFor="password">Password</FormLabel>
-              <FormControl className="w-full">
+              <FormLabel htmlFor="password" className="text-xl">Password</FormLabel>
+              <FormControl className="w-full text-xl">
                 <Input
                   placeholder="Your password"
                   id="password"
@@ -94,7 +95,7 @@ export default function FormComponent({
         />
 
         <Button
-          className="textColor bg-[#301812]"
+          className="textColor bg-[#301812] text-xl"
           onClick={(e) => {
             e.preventDefault();
             onSubmit();

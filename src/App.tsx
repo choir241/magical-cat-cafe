@@ -1,63 +1,189 @@
+import { useState, useEffect } from "react";
+import { getFoodData, IFoodCategory, IFoodData } from "../api/getData";
+import FoodCard from "../components/FoodCard";
+import Pagination from "../components/Pagination";
 import { Button } from "../components/ui/button";
-import FormComponent from "../components/Form";
-import { loginAccount, signupAccount } from "../api/userApi";
-import { useState, useMemo } from "react";
-import { getAccount, IUser } from "../api/userApi";
 import Nav from "../components/Nav";
+import { getCart, ICartData } from "../api/cartApi";
 
-export default function App() {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [user, setUser] = useState<IUser | null>(null);
-  const [buttonToggle, setButtonToggle] = useState<boolean>(false);
+export default function Menu() {
+  const [foodData, setFoodData] = useState<IFoodCategory | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [category, setCategory] = useState("appetizers");
+  const [cartData, setCartData] = useState<ICartData[] | Document[]>([]);
 
-  useMemo(() => {
-    getAccount({ setUser: (e) => setUser(e) });
+  const itemsPerPage = 6;
+
+  const firstIndex = (currentPage - 1) * itemsPerPage;
+  const lastIndex = firstIndex + itemsPerPage;
+
+  useEffect(() => {
+    getFoodData({
+      setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
+    });
+
+    getCart({
+      setCartData: (cartData: ICartData[]) => setCartData(cartData)
+    })
   }, []);
+
+  console.log(cartData);
 
   return (
     <div className="bg-[#383151] min-h-screen">
-      {buttonToggle ? (
-        <main className="flex flex-col items-center">
-          <Nav/>
-          
-          <FormComponent
-            buttonText="Login"
-            onSubmit={() =>
-              loginAccount({ accountData: { name, email, password } })
-            }
-            setName={(e) => setName(e)}
-            setEmail={(e) => setEmail(e)}
-            setPassword={(e) => setPassword(e)}
-          />
+      {foodData ? (
+        <main className="w-full">
+          <Nav />
 
-          <div className="flex items-center mt-4">
-            <span>Don't have an account?</span>
-            <Button variant={"link"} onClick={() => setButtonToggle(false)} className="textColor">
-              Signup
+          <section className="flex justify-center items-center mt-8">
+            <Button className="mr-10" onClick={() => setCategory("appetizers")}>
+              Appetizers
             </Button>
-          </div>
+            <Button className="mr-10" onClick={() => setCategory("main")}>
+              Main Dishes
+            </Button>
+            <Button className="mr-10" onClick={() => setCategory("drinks")}>
+              Drinks
+            </Button>
+            <Button onClick={() => setCategory("desserts")}>Desserts</Button>
+          </section>
+
+          {category === "appetizers" ? (
+            <section className="w-full flex justify-between items-center flex-col mt-10">
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.appetizers
+                  .slice(firstIndex, lastIndex)
+                  .map((food: IFoodData, i: number) => {
+                    if (i % 2 === 0) {
+                      return (
+                        <div key={`${food}-${i}`}>
+                          <FoodCard foodData={food} />
+                        </div>
+                      );
+                    }
+                  })}
+              </div>
+
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.appetizers
+                  .slice(firstIndex, lastIndex)
+                  .map((food: IFoodData, i: number) => {
+                    if (i % 2 !== 0) {
+                      return (
+                        <div key={`${food}-${i}`}>
+                          <FoodCard foodData={food} />
+                        </div>
+                      );
+                    }
+                  })}
+              </div>
+            </section>
+          ) : (
+            ""
+          )}
+
+          {category === "main" ? (
+            <section className="w-full flex justify-between items-center flex-col mt-10">
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.mainDishes
+                  .slice(firstIndex, lastIndex)
+                  .map((food: IFoodData, i: number) => {
+                    if (i % 2 === 0) {
+                      return (
+                        <div key={`${food}-${i}`}>
+                          <FoodCard foodData={food} className="" />
+                        </div>
+                      );
+                    }
+                  })}
+              </div>
+
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.mainDishes
+                  .slice(firstIndex, lastIndex)
+                  .map((food: IFoodData, i: number) => {
+                    if (i % 2 !== 0) {
+                      return (
+                        <div key={`${food}-${i}`}>
+                          <FoodCard foodData={food} />
+                        </div>
+                      );
+                    }
+                  })}
+              </div>
+
+              <Pagination
+                list={foodData.mainDishes}
+                itemsPerPage={itemsPerPage}
+                setCurrentPage={setCurrentPage}
+              />
+            </section>
+          ) : (
+            ""
+          )}
+
+          {category === "drinks" ? (
+            <section className="w-full flex justify-between items-center flex-col mt-10">
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.drinks.map((food: IFoodData, i: number) => {
+                  if (i % 2 === 0) {
+                    return (
+                      <div key={`${food}-${i}`}>
+                        <FoodCard foodData={food} />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.drinks.map((food: IFoodData, i: number) => {
+                  if (i % 2 !== 0) {
+                    return (
+                      <div key={`${food}-${i}`}>
+                        <FoodCard foodData={food} />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            </section>
+          ) : (
+            ""
+          )}
+
+          {category === "desserts" ? (
+            <section className="w-full flex justify-between items-center flex-col mt-10">
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.desserts.map((food: IFoodData, i: number) => {
+                  if (i % 2 === 0) {
+                    return (
+                      <div key={`${food}-${i}`}>
+                        <FoodCard foodData={food} />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+
+              <div className="flex items-end mb-20 justify-evenly w-full">
+                {foodData.desserts.map((food: IFoodData, i: number) => {
+                  if (i % 2 !== 0) {
+                    return (
+                      <div key={`${food}-${i}`}>
+                        <FoodCard foodData={food} />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            </section>
+          ) : (
+            ""
+          )}
         </main>
       ) : (
-        <main className="flex flex-col items-center">
-          <FormComponent
-            buttonText="Signup"
-            onSubmit={() =>
-              signupAccount({ accountData: { name, email, password } })
-            }
-            setName={(e) => setName(e)}
-            setEmail={(e) => setEmail(e)}
-            setPassword={(e) => setPassword(e)}
-          />
-
-          <div className="flex items-center mt-4">
-            <span >Already have an account?</span>
-            <Button className="textColor" variant={"link"} onClick={() => setButtonToggle(true)}>
-              Login
-            </Button>
-          </div>
-        </main>
+        <h1>Loading...</h1>
       )}
     </div>
   );
