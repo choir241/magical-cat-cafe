@@ -94,6 +94,7 @@ export default function FormComponent({
         />
 
         <Button
+          className="textColor bg-[#301812]"
           onClick={(e) => {
             e.preventDefault();
             onSubmit();
