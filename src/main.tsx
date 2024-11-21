@@ -7,7 +7,6 @@ import "./index.css";
 
 const Landing = lazy(() => import("./App.tsx"));
 const Profile = lazy(() => import("./pages/Profile.tsx"));
-const Menu = lazy(() => import("./pages/Menu.tsx"));
 const Login = lazy(() => import("./pages/Login.tsx"));
 
 createRoot(document.getElementById("root")!).render(
@@ -17,7 +16,6 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/menu" element={<Menu />} />
           <Route path="/login" element={<Login />}/>
         </Routes>
       </Suspense>

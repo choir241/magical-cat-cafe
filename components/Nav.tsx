@@ -18,7 +18,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <NavigationMenu className="py-4">
+    <NavigationMenu className="py-4 alig">
       <NavigationMenuList>
       <NavigationMenuItem>
             <a href="/" className={`text-2xl ${buttonVariants({variant: "link"})} textColor hover:opacity-70`}>
