@@ -104,7 +104,7 @@ export default function FoodCard({
 
 
   return (
-    <Card className={`flex flex-col items-center w-[20rem] ${className}`}>
+    <Card className={`flex flex-col items-center w-[20rem] bg-[#1B1D2E] ${className}`}>
       <CardHeader>
         <CardTitle>
           {foodData.name} {foodData.price}

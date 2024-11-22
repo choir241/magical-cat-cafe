@@ -36,16 +36,16 @@ export default function Menu() {
           <Nav />
 
           <section className="flex justify-center items-center mt-8">
-            <Button className="mr-10" onClick={() => setCategory("appetizers")}>
+            <Button className="text-[#DFC3AB] bg-[#2F1711] mr-10" onClick={() => setCategory("appetizers")}>
               Appetizers
             </Button>
-            <Button className="mr-10" onClick={() => setCategory("main")}>
+            <Button className="text-[#DFC3AB] bg-[#2F1711] mr-10" onClick={() => setCategory("main")}>
               Main Dishes
             </Button>
-            <Button className="mr-10" onClick={() => setCategory("drinks")}>
+            <Button className="text-[#DFC3AB] bg-[#2F1711] mr-10" onClick={() => setCategory("drinks")}>
               Drinks
             </Button>
-            <Button onClick={() => setCategory("desserts")}>Desserts</Button>
+            <Button className="text-[#DFC3AB] bg-[#2F1711]" onClick={() => setCategory("desserts")}>Desserts</Button>
           </section>
 
           {category === "appetizers" ? (
