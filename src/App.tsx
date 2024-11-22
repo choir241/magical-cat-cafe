@@ -2,7 +2,7 @@ import { Button } from "../components/ui/button";
 import FormComponent from "../components/Form";
 import { loginAccount, signupAccount, getAccount, IUser } from "../api/userApi";
 import { useState, useMemo } from "react";
-import { getCart, addToCart } from "../api/cartApi";
+// import { getCart, addToCart } from "../api/cartApi";
 import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore/lite";
 
 export default function App() {
@@ -23,11 +23,6 @@ export default function App() {
     <>
       {buttonToggle ? (
         <main>
-          <button onClick={(e)=>{
-            e.preventDefault();
-            addToCart();
-          }}>Test</button>
-
           <FormComponent
             buttonText="Login"
             onSubmit={() =>

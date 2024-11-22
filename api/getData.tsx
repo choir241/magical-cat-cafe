@@ -15,7 +15,7 @@ export async function getCatData({
   setCatData: (catData: ICatData[]) => void;
 }) {
   try {
-    const catData = await import("../public/cats.json");
+    const catData = await import("../src/public/cats.json");
 
     if (!catData) {
       throw new Error("No cat data found, please try again later.");
@@ -47,7 +47,7 @@ export async function getFoodData({
   setFoodData: (foodData: IFoodCategory) => void;
 }) {
   try {
-    const foodData = await import("../public/food.json");
+    const foodData = await import("../src/public/food.json");
 
     if (!foodData) {
       throw new Error("No food data found, please try again later.");

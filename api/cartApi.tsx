@@ -1,7 +1,5 @@
-import { database} from "../api/firebase";
-import { getDatabase, ref, set } from "firebase/database";
-import { getDocs, collection } from 'firebase/firestore/lite';
-import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore/lite";
+import { database} from "./firebase";
+import { doc, getDocs, collection, addDoc, updateDoc, deleteDoc } from 'firebase/firestore/lite';
 
 export interface ICartDB {
   name: string;
@@ -24,14 +22,15 @@ export interface ICartData {
   $updatedAt?: string;
 }
 
-export async function addToCart() {
+export async function addToCart({ cartItems }: { cartItems: ICartItem }) {
   try {
-    const db = getDatabase();
-    set(ref(db, 'users/'), {
-      name: "su-metal"
-    });
+    
+    const cartsCollection = collection(database, "cart");
 
-    window.location.reload();
+    await addDoc(cartsCollection, {
+      cartItems
+    })
+
   } catch (error) {
     throw new Error(`There was an error adding to your cart, ${error}`);
   }
@@ -45,8 +44,11 @@ export async function editCart({
   cartId: string;
 }) {
   try {
-    console.log(cartItems);
-    console.log(cartId);
+    const cartsCollection = doc(database, "cart", cartId);
+
+    await updateDoc(cartsCollection, {
+      cartItems
+    });
   } catch (error) {
     throw new Error(`There was an error editing your cart, ${error}`);
   }
@@ -54,23 +56,24 @@ export async function editCart({
 
 export async function deleteCart({ cartId }: { cartId: string }) {
   try {
-  console.log(cartId);
+    await deleteDoc(doc(database, "cart", cartId));
   } catch (error) {
     throw new Error(`Error deleting your cart, ${error}`);
   }
 }
 
 export async function getCart(
-  {
-  setCartData,
-}: {
-  setCartData: (e: QueryDocumentSnapshot<DocumentData, DocumentData>[]) => void;
-}
+  {setCartData}:{setCartData: (e:ICartData[])=>void}
 ) {
   try {
-    const userCollection = collection(database, "users");
+    const userCollection = collection(database, "cart");
     const data = await getDocs(userCollection);
-    setCartData(data.docs);
+    const obj:any[] = [];
+    data.forEach((doc)=>{
+      obj.push(doc.data());
+    })
+
+    setCartData(obj);
   } catch (error) {
     throw new Error(`Error getting your cart, ${error}`);
   }

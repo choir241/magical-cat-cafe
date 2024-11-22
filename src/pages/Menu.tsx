@@ -4,7 +4,7 @@ import FoodCard from "../../components/FoodCard/FoodCard";
 import Pagination from "../../components/Pagination";
 import { Button } from "../../components/ui/button";
 import Nav from "../../components/Nav";
-import { getCart, ICartData } from "../../api/cartApi";
+import { ICartData } from "../../api/cartApi";
 
 export default function Menu() {
   const [foodData, setFoodData] = useState<IFoodCategory | null>(null);
@@ -22,12 +22,10 @@ export default function Menu() {
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
 
-    getCart({
-      setCartData: (cartData: ICartData[]) => setCartData(cartData)
-    })
+    // getCart({
+    //   setCartData: (cartData: ICartData[]) => setCartData(cartData)
+    // })
   }, []);
-
-  console.log(cartData);
 
   return (
     <>

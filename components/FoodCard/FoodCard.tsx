@@ -9,7 +9,7 @@ import {
 import { IFoodData } from "api/getData";
 import { Button } from "../ui/button";
 import { BsPlusCircleFill } from "react-icons/bs";
-import { getCart, addToCart, ICartData } from "../../api/cartApi";
+import { addToCart, getCart, ICartData, ICartItem } from "../../api/cartApi";
 import { useState, useMemo } from "react";
 import { getAccount, IUser } from "../../api/userApi";
 import {guestIdGenerator} from "../FoodCard/guestIdGenerator"
@@ -21,7 +21,7 @@ export default function FoodCard({
   foodData: IFoodData;
   className?: string;
 }) {
-  const [user, setUser] = useState<IUser | null>(null);
+  const [user, setUser] = useState<null | IUser>(null);
   const [cartData, setCartData] = useState<ICartData[]>([]);
 
   useMemo(() => {
@@ -31,62 +31,87 @@ export default function FoodCard({
   }, []);
 
   const cartItems = useMemo(() => {
-    if (!cartData.length) return [];
+    if (!cartData.length && !cartData) return [];
 
-    const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
-    const findCart = cartData.find((data: ICartData) => {
-      return JSON.parse(data.cartItems)[id];
-    });
+    if(user){
+      if(user.$id){
 
-    if (findCart) {
-      return JSON.parse(findCart.cartItems)[id];
+        const findCart = cartData.find((data: ICartItem) => {
+          return data.cartItems[id];
+        });
+        console.log(findCart)
+        if (findCart) {
+          return findCart.cartItems[id];
+        }
+    
+        return [];
+      }
     }
+
   }, [cartData, user]);
 
+  console.log(cartItems);
+
   function addItemToCart() {
-    if (user) {
+    // if (user) {
+    //   if(user.$id){
+    //     const data = {
+    //       [user.$id]: [
+    //         {
+    //           name: foodData.name,
+    //           price: foodData.price,
+    //           gallery: foodData.gallery,
+    //           quantity: 1,
+    //         },
+    //       ],
+    //     };
+    
+    //     if(cartItems.length){
+  
+    //       cartItems[user.$id].push(data[user.$id]);
+    //       console.log(cartItems)
+    //       return;
+    //     }
+  
+    //     addToCart({ cartItems: data });
+  
+    //     return;
+    //   }
+    // }
+
+    if(cartItems.length){
       const data = {
-        [user.$id]: [
-          {
             name: foodData.name,
             price: foodData.price,
             gallery: foodData.gallery,
             quantity: 1,
-          },
-        ],
       };
 
-      if(cartItems.length){
-
-        cartItems[user.$id].push(data[user.$id]);
-
-
-        console.log(cartItems)
-
-        return;
-      }
-
-      addToCart({ cartItems: data });
-
+      console.log(cartItems[sessionStorage.getItem("guestId")])
+      cartItems[sessionStorage.getItem("guestId") as string].push(data);
+      console.log(cartItems)
       return;
+    }else{
+      // const guestId = guestIdGenerator();
+
+      // const data = {
+      //   [guestId]: [
+      //     {
+      //       name: foodData.name,
+      //       price: foodData.price,
+      //       gallery: foodData.gallery,
+      //       quantity: 1,
+      //     },
+      //   ],
+      // };
+  
+      // sessionStorage.setItem("guestId", guestId);
+  
+  
+      // addToCart({ cartItems: data });
     }
 
-    const guestId = guestIdGenerator();
 
-    const data = {
-      [guestId]: [
-        {
-          name: foodData.name,
-          price: foodData.price,
-          gallery: foodData.gallery,
-          quantity: 1,
-        },
-      ],
-    };
-
-    sessionStorage.setItem("guestId", guestId);
-
-    addToCart({ cartItems: data });
   }
 
 
