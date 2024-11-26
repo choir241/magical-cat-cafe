@@ -118,12 +118,13 @@ export default function FoodCard({
       </CardContent>
       <CardFooter>
         <Button
+          className="bg-[#C15856]"
           onClick={(e) => {
             e.preventDefault();
             addItemToCart();
           }}
         >
-          <BsPlusCircleFill />
+          <BsPlusCircleFill className="text-[#DFC3A9]"/>
         </Button>
       </CardFooter>
     </Card>

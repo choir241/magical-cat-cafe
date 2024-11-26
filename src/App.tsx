@@ -1,27 +1,49 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { getFoodData, IFoodCategory, IFoodData } from "../api/getData";
 import FoodCard from "../components/FoodCard";
 import Pagination from "../components/Pagination";
 import { Button } from "../components/ui/button";
 import Nav from "../components/Nav";
-import { getCart, ICartData } from "../api/cartApi";
-import { Navigate } from "react-router-dom";
+import { getCart, ICartData, ICartDB } from "../api/cartApi";
+import { IUser, getAccount } from "../api/userApi";
 
 export default function Menu() {
   const [foodData, setFoodData] = useState<IFoodCategory | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [category, setCategory] = useState("appetizers");
-  const [cartData, setCartData] = useState<ICartData[] | Document[]>([]);
+  const [cartData, setCartData] = useState<ICartData[]>([]);
+  const [user, setUser] = useState<IUser | null>(null);
+  const [usersCart, setUsersCart] = useState<ICartDB[]>([]);
 
   const itemsPerPage = 6;
 
   const firstIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = firstIndex + itemsPerPage;
 
+  const cartItems = useMemo(() => {
+    if (!cartData.length) return [];
+
+    const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
+    const findCart = cartData.find((data: ICartData) => {
+      return JSON.parse(data.cartItems)[id];
+    });
+
+    if (findCart) {
+      return JSON.parse(findCart.cartItems)[id];
+    }
+  }, [cartData, user]);
+
+  useEffect(() => {
+    setUsersCart(cartItems);
+  }, [cartItems]);
+
+
   useEffect(() => {
     getFoodData({
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
+
+    getAccount({ setUser: (e) => setUser(e) });
 
     getCart({
       setCartData: (cartData: ICartData[]) => setCartData(cartData)
@@ -32,7 +54,7 @@ export default function Menu() {
     <div className="bg-[#383151] min-h-screen">
       {foodData ? (
         <main className="w-full">
-          <Nav />
+      <Nav numOfCartItems={usersCart ? usersCart.length : 0}/>
 
           <section className="flex justify-center items-center mt-8">
             <Button className="text-[#DFC3AB] bg-[#2F1711] mr-10" onClick={() => setCategory("appetizers")}>
