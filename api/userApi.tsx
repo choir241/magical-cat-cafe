@@ -39,6 +39,9 @@ export async function loginAccount({ accountData }: { accountData: IAccount }) {
       accountData.email,
       accountData.password,
     );
+
+    sessionStorage.clear();
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error logging into your account, ${error}`);
   }
@@ -47,6 +50,7 @@ export async function loginAccount({ accountData }: { accountData: IAccount }) {
 export async function logoutAccount() {
   try {
     await account.deleteSessions();
+    window.location.reload();
   } catch (error) {
     throw new Error(`There was an error logging out of your account, ${error}`);
   }

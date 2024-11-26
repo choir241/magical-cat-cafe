@@ -8,6 +8,7 @@ import "./index.css";
 const Landing = lazy(() => import("./App.tsx"));
 const Profile = lazy(() => import("./pages/Profile.tsx"));
 const Login = lazy(() => import("./pages/Login.tsx"));
+const Cart = lazy(() => import("./pages/Cart.tsx"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<Landing />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

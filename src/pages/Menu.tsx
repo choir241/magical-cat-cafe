@@ -1,38 +1,57 @@
-import { useState, useEffect } from "react";
-import { getFoodData, IFoodCategory, IFoodData } from "../api/getData";
-import FoodCard from "../components/FoodCard";
-import Pagination from "../components/Pagination";
-import { Button } from "../components/ui/button";
-import Nav from "../components/Nav";
-import { getCart, ICartData } from "../api/cartApi";
-import { Navigate } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { getFoodData, IFoodCategory, IFoodData } from "../../api/getData";
+import FoodCard from "../../components/FoodCard";
+import Pagination from "../../components/Pagination";
+import { Button } from "../../components/ui/button";
+import Nav from "../../components/Nav";
+import { getCart, ICartData } from "../../api/cartApi";
+import { IUser, getAccount } from "../../api/userApi";
 
 export default function Menu() {
   const [foodData, setFoodData] = useState<IFoodCategory | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [category, setCategory] = useState("appetizers");
-  const [cartData, setCartData] = useState<ICartData[] | Document[]>([]);
+  const [cartData, setCartData] = useState<ICartData[]>([]);
+  const [user, setUser] = useState<IUser | null>(null);
+  const [numOfCart, setNumOfCart] = useState<number>(0);
 
   const itemsPerPage = 6;
 
   const firstIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = firstIndex + itemsPerPage;
 
+  const cartCount = useMemo(() => {
+    if (!cartData.length) return 0;
+
+    const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
+    const findCart = cartData.find((data: ICartData) => {
+      return JSON.parse(data.cartItems)[id];
+    });
+
+    return findCart ? JSON.parse(findCart.cartItems)[id].length : 0;
+  }, [cartData, user]);
+
   useEffect(() => {
+    setNumOfCart(cartCount);
+  }, [cartCount]);
+
+  useEffect(() => {
+    getCart({
+      setCartData: (cartData: ICartData[]) => setCartData(cartData),
+    });
+
+    getAccount({ setUser: (e) => setUser(e) });
+
     getFoodData({
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
-
-    getCart({
-      setCartData: (cartData: ICartData[]) => setCartData(cartData)
-    })
-  }, []);
+  }, []); // Run only once on mount
 
   return (
-    <div className="bg-[#383151] min-h-screen">
+    <>
       {foodData ? (
         <main className="w-full">
-          <Nav />
+          <Nav numOfCartItems={numOfCart} />
 
           <section className="flex justify-center items-center mt-8">
             <Button className="mr-10" onClick={() => setCategory("appetizers")}>
@@ -184,6 +203,6 @@ export default function Menu() {
       ) : (
         <h1>Loading...</h1>
       )}
-    </div>
+    </>
   );
 }
