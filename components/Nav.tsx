@@ -19,32 +19,42 @@ export default function Nav({ numOfCartItems }: { numOfCartItems?: number }) {
   }, []);
 
   return (
-    <NavigationMenu className="py-4 alig">
+    <NavigationMenu className="pt-6">
       <NavigationMenuList>
       <NavigationMenuItem>
-            <a href="/" className={`text-2xl ${buttonVariants({variant: "link"})} textColor hover:opacity-70`}>
-                Menu
+          <a
+            href="/"
+            className={`textColor ${buttonVariants({ variant: "link" })} hover:opacity-70`}
+          >
+            Menu
             </a>
-        </NavigationMenuItem>
-
+      </NavigationMenuItem>
         <NavigationMenuItem>
-          
-        {user?
-           <a href="" onClick={(e)=>{
-            e.preventDefault()
-            logoutAccount()
-          }}>Logout</a>
-        :
-        <a href="/login" className={`text-2xl ${buttonVariants({variant: "link"})} textColor hover:opacity-70`}>
-        Login
-        </a>
-          }
+          <a
+            href="/cart"
+            className={`textColor ${buttonVariants({ variant: "link" })} hover:opacity-70`}
+          >
+            <span className="text-[1rem] pr-4">{numOfCartItems}</span>
+            <FaCartShopping className="text-[2rem]" />
+          </a>
         </NavigationMenuItem>
-
         <NavigationMenuItem>
-            <a href="/cart" className={`text-2xl ${buttonVariants({variant: "link"})} textColor hover:opacity-70`}>
-                <FaCartShopping />
-            </a>
+          {user ? (
+            <Button
+              className="textColor"
+              variant={"link"}
+              onClick={() => {
+                logoutAccount();
+                navigate("/");
+              }}
+            >
+              Logout
+            </Button>
+          ) : (
+            <Button variant={"link"}>
+              <a className="textColor" href="/login">Login</a>
+            </Button>
+          )}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

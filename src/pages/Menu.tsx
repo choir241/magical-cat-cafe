@@ -4,7 +4,7 @@ import FoodCard from "../../components/FoodCard";
 import Pagination from "../../components/Pagination";
 import { Button } from "../../components/ui/button";
 import Nav from "../../components/Nav";
-import { getCart, ICartData, ICartItem } from "../../api/cartApi";
+import { getCart, ICartData } from "../../api/cartApi";
 import { IUser, getAccount } from "../../api/userApi";
 
 export default function Menu() {
@@ -13,27 +13,27 @@ export default function Menu() {
   const [category, setCategory] = useState("appetizers");
   const [cartData, setCartData] = useState<ICartData[]>([]);
   const [user, setUser] = useState<IUser | null>(null);
-  const [usersCart, setUsersCart] = useState<ICartItem[] | null>(null);
+  const [numOfCart, setNumOfCart] = useState<number>(0);
 
   const itemsPerPage = 6;
 
   const firstIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = firstIndex + itemsPerPage;
 
-  const cartItems = useMemo(() => {
-    if (!cartData.length) return [];
+  const cartCount = useMemo(() => {
+    if (!cartData.length) return 0;
 
     const id = user ? user.$id : (sessionStorage.getItem("guestId") as string);
     const findCart = cartData.find((data: ICartData) => {
       return JSON.parse(data.cartItems)[id];
     });
 
-    return findCart ? JSON.parse(findCart.cartItems)[id] : {};
+    return findCart ? JSON.parse(findCart.cartItems)[id].length : 0;
   }, [cartData, user]);
 
   useEffect(() => {
-    setUsersCart(cartItems);
-  }, [cartItems]);
+    setNumOfCart(cartCount);
+  }, [cartCount]);
 
   useEffect(() => {
     getCart({
@@ -45,13 +45,13 @@ export default function Menu() {
     getFoodData({
       setFoodData: (foodData: IFoodCategory) => setFoodData(foodData),
     });
-  }, []);
+  }, []); // Run only once on mount
 
   return (
     <>
-      {foodData && usersCart ? (
+      {foodData ? (
         <main className="w-full">
-          <Nav numOfCartItems={usersCart.length} />
+          <Nav numOfCartItems={numOfCart} />
 
           <section className="flex justify-center items-center mt-8">
             <Button className="mr-10" onClick={() => setCategory("appetizers")}>

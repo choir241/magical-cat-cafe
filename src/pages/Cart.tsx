@@ -35,12 +35,10 @@ export default function Cart() {
   }, []);
 
   return (
-    <>
-      <main>
-      <Nav />
+    <main className="bg-[#383151] min-h-screen">
+      <Nav numOfCartItems={usersCart ? usersCart.length : 0}/>
 
       <CartItem cartItem={usersCart} />
       </main>
-    </>
   );
 }

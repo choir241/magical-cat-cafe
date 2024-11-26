@@ -28,8 +28,6 @@ export default function Menu() {
     })
   }, []);
 
-  console.log(cartData);
-
   return (
     <div className="bg-[#383151] min-h-screen">
       {foodData ? (
