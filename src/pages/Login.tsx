@@ -1,8 +1,7 @@
-import { Button } from "../../components/ui/button";
-import FormComponent from "../../components/Form";
-import { loginAccount, signupAccount } from "../../api/userApi";
 import { useState } from "react";
-import Nav from "../../components/Nav";
+import "./login/RenderLogin";
+import RenderLogin from "./login/RenderLogin";
+import RenderRegister from "./login/RenderRegister";
 
 export default function App() {
   const [name, setName] = useState<string>("");
@@ -13,55 +12,9 @@ export default function App() {
   return (
     <div className="bg-[#383151] min-h-screen">
       {buttonToggle ? (
-        <main className="flex flex-col items-center">
-          <Nav />
-
-          <FormComponent
-            buttonText="Login"
-            onSubmit={() =>
-              loginAccount({ accountData: { name, email, password } })
-            }
-            setName={(e) => setName(e)}
-            setEmail={(e) => setEmail(e)}
-            setPassword={(e) => setPassword(e)}
-          />
-
-          <div className="flex items-center mt-4">
-            <span className="text-xl">Don't have an account?</span>
-            <Button
-              variant={"link"}
-              onClick={() => setButtonToggle(false)}
-              className="textColor text-xl"
-            >
-              Signup
-            </Button>
-          </div>
-        </main>
+        <RenderLogin {...{name, email, password, setName: (e:string)=>setName(e), setEmail: (e:string)=>setEmail(e), setPassword: (e:string)=>setPassword(e), setButtonToggle: (e:boolean)=>setButtonToggle(e)}}/>
       ) : (
-        <main className="flex flex-col items-center">
-          <Nav />
-
-          <FormComponent
-            buttonText="Signup"
-            onSubmit={() =>
-              signupAccount({ accountData: { name, email, password } })
-            }
-            setName={(e) => setName(e)}
-            setEmail={(e) => setEmail(e)}
-            setPassword={(e) => setPassword(e)}
-          />
-
-          <div className="flex items-center mt-4">
-            <span className="text-xl">Already have an account?</span>
-            <Button
-              className="text-xl textColor"
-              variant={"link"}
-              onClick={() => setButtonToggle(true)}
-            >
-              Login
-            </Button>
-          </div>
-        </main>
+        <RenderRegister {...{name, email, password, setName: (e:string)=>setName(e), setEmail: (e:string)=>setEmail(e), setPassword: (e:string)=>setPassword(e), setButtonToggle: (e:boolean)=>setButtonToggle(e)}}/>
       )}
     </div>
   );
